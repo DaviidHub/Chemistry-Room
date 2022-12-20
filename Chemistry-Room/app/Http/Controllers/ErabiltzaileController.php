@@ -49,7 +49,6 @@ class ErabiltzaileController extends Controller
 
             'rol' => 'required|max:20',
 
-
         ]);
         //
         $erab = new Erabiltzaileak($request->all());

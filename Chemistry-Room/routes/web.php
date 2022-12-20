@@ -14,10 +14,9 @@ use App\Http\Controllers\ErabiltzaileController;
 |
 */
 
-Route::get('/', function () {
-return view('welcome');
+Route::get('/web', function () {
+return view('web.index');
 
 });
 Route::get('/adminKarpeta', [ErabiltzaileController::class, 'index'])->name('adminKarpeta.admin');
-Route::get('/web', [ErabiltzaileController::class, 'index'])->name('web.index');
 
