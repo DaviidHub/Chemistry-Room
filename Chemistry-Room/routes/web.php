@@ -15,8 +15,21 @@ use App\Http\Controllers\ErabiltzaileController;
 */
 
 Route::get('/web', function () {
-return view('web.index');
+return view('web.login', );
+})->name('web.inicio');
 
-});
-Route::get('/adminKarpeta', [ErabiltzaileController::class, 'index'])->name('adminKarpeta.admin');
+
+Route::get('/registro', function () {
+    return view('web.registro');
+})->name('web.registro');
+
+Route::get('/registro', function () {
+    return view('web.registro');
+})->name('web.registro');
+
+
+
+Route::get('/adminKarpeta', [ErabiltzaileController::class, 'adminmode'])->name('adminKarpeta.admin');
+Route::get('/crear', [ErabiltzaileController::class, 'store'])->name('web.store');
+Route::get('/login', [ErabiltzaileController::class, 'login'])->name('web.login');
 
