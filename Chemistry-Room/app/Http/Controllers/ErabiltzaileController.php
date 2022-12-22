@@ -12,7 +12,23 @@ class ErabiltzaileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function login(Request $request)
+    {
+        //
+        $usuarios = Erabiltzaileak::where('mail','=',$request->mail)->get();
+        foreach($usuarios as $usu){
+            if($request->pasahitza != $usu->pasahitza){
+                return view('Comercio.log-reg', 'El usuario es incorrecto');
+            }   
+        }
+
+        session(['erab' => $usu]);
+        return view('web.orriNagusi');
+
+    }
+
+    public function adminmode()
     {
         //
         $erab = Erabiltzaileak::orderby('id', 'desc')->paginate(16);
@@ -39,21 +55,33 @@ class ErabiltzaileController extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate([
+      
+        if($request->pasahitza == $request->pasahitzab){
 
-            'izena' => 'required|max:75',
+            $request->validate([
 
-            'abizena' => 'required|max:50',
-
-            'mail' => 'required||min:10|max:50',
-
-            'rol' => 'required|max:20',
-
-        ]);
-        //
-        $erab = new Erabiltzaileak($request->all());
-        $erab->save();
-        return redirect()->action([ErabiltzaileController::class, 'index']);
+                'izena' => 'required|max:75',
+    
+                'abizena' => 'required|max:50',
+    
+                'mail' => 'required||min:10|max:50',
+    
+                'pasahitza' => 'required||min:8|max:20',
+    
+            ]);
+            
+            //
+            $erab = new Erabiltzaileak();
+            $erab ->izena = $request->izena;
+            $erab ->abizenak = $request->abizena;
+            $erab ->mail = $request->mail;
+    
+    
+            $erab ->pasahitza = $request->pasahitza;
+            $erab ->rol = 'defoult';
+            $erab->save();
+        }
+        return view('web.login');
     }
 
     /**
@@ -101,3 +129,5 @@ class ErabiltzaileController extends Controller
         //
     }
 }
+
+
