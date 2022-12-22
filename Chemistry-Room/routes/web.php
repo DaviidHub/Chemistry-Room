@@ -14,10 +14,22 @@ use App\Http\Controllers\ErabiltzaileController;
 |
 */
 
-Route::get('/', function () {
-return view('welcome');
+Route::get('/web', function () {
+return view('web.login', );
+})->name('web.inicio');
 
-});
-Route::get('/adminKarpeta', [ErabiltzaileController::class, 'index'])->name('adminKarpeta.admin');
-Route::get('/web', [ErabiltzaileController::class, 'index'])->name('web.index');
+
+Route::get('/registro', function () {
+    return view('web.registro');
+})->name('web.registro');
+
+Route::get('/froga1', function () {
+    return view('web.froga1');
+})->name('web.froga1');
+
+
+
+Route::get('/adminKarpeta', [ErabiltzaileController::class, 'adminmode'])->name('adminKarpeta.admin');
+Route::get('/crear', [ErabiltzaileController::class, 'store'])->name('web.store');
+Route::get('/login', [ErabiltzaileController::class, 'login'])->name('web.login');
 
