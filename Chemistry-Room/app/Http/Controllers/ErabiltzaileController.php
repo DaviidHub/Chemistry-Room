@@ -78,7 +78,7 @@ class ErabiltzaileController extends Controller
     
     
             $erab ->pasahitza = $request->pasahitza;
-            $erab ->rol = 'defoult';
+            $erab ->rol = 'default';
             $erab->save();
         }
         return view('web.login');
