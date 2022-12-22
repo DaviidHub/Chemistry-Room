@@ -37,7 +37,7 @@
                 <input type="submit" class=" border-0 rounded" value="BIDALI">
             </form>
 
-            <a href="{{ route('web.inicio') }}" class="aLogin align-self-center ">Login</a>
+            <a href="{{ route('web.inicio') }}" class="aLogin align-self-center ">LOGIN</a>
 
         </div>
 

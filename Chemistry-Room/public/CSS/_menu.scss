@@ -20,10 +20,10 @@ $img-shadow: 0 -4px 4px rgba(0 0 0 / .5);
     justify-content: center;
     align-items: flex-end;
     font-size: 15vh;
-    
-    span {
-      height: 17vh;
-      line-height: 25vh;
+
+    #titulo {
+        height: 17vh;
+        line-height: 25vh;
         color: $green;
         font-weight: bolder;
     }
@@ -45,10 +45,11 @@ $img-shadow: 0 -4px 4px rgba(0 0 0 / .5);
     top: 10vh;
     box-shadow: 0 -4px 4px 0 rgba(0 0 0 / .3);
     font-size: 0;
+
     &:active {
         box-shadow: $inner-shadow;
     }
-    
+
     img {
         top: 0;
         width: 100px;
@@ -74,8 +75,8 @@ $img-shadow: 0 -4px 4px rgba(0 0 0 / .5);
     }
 }
 
-.dropdown-item{
-  height: min-content;
+.dropdown-item {
+    height: min-content;
 }
 
 
@@ -91,4 +92,12 @@ $img-shadow: 0 -4px 4px rgba(0 0 0 / .5);
     100% {
         transform: translateY(2px);
     }
+}
+
+#tiempo{
+    color: #339476;
+    font-size: 70px;
+    font-weight: lighter;
+    font-family: roboto-thin;
+    margin-right: 1%;
 }

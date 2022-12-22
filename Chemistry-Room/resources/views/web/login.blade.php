@@ -22,7 +22,7 @@
 
         <div class="divLogin formLogin d-flex flex-column justify-content-between mx-5">
 
-            <form action="{{ route('web.login') }}" method="GET"
+            <form id="formLogin" action="{{ route('web.login') }}" method="GET"
                 class="formLogin d-flex flex-column align-items-center mx-5" autocomplete="off">
 
                 <input class="inputLogin" type="text" placeholder="Mail" name="mail">

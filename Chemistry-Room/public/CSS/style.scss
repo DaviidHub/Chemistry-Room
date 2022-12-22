@@ -10,6 +10,7 @@ $light-gray: #EAEBED;
 @use '_orriNagusi';
 @use '_login';
 @use '_registro';
+@use '_froga1';
 
 @font-face {
     font-family: roboto-regular;
@@ -20,6 +21,8 @@ $light-gray: #EAEBED;
     font-family: roboto-thin;
     src: url(/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Thin.ttf);
 }
+
+
 
 * {
     margin: 0;
