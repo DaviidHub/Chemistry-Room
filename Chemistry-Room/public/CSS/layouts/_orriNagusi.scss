@@ -1,0 +1,44 @@
+
+$drop-shadow: 0px 4px 4px 0 rgba(0 0 0/ .3);
+$inner-shadow: inset 0px 4px 4px 0 rgba(0 0 0/ .5);
+$img-shadow: 0px -4px 4px  rgba(0 0 0 / .5);
+$black: #191919;
+$dark-green:#21605D;
+$green:#339476;
+$light-gray: #EAEBED;
+
+@use '_menu';
+
+.bocadilloON {
+    position: absolute;
+    top: 20vh;
+    right: 35vh ;
+    margin-left: 14% !important;
+    height: 200px;
+    width: 300px;
+    background-color: $light-gray;
+    box-shadow: $drop-shadow;
+    border-radius: 2em 2em 2em 0;
+    animation: upDownBocadillo alternate infinite 2.5s linear;
+    
+    h2 {
+        color: $green;
+        font-family: roboto-thin;
+    }
+    
+    p{
+        color: $green;
+        font-size: medium;
+    }
+}
+
+.lola{
+    filter: drop-shadow($img-shadow);
+}
+
+.dropdown-toggle{
+    &:after {
+        display:none;
+    }
+}
+

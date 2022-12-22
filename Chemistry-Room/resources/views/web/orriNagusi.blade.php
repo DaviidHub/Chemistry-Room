@@ -16,7 +16,7 @@
 
 <body class="overflow-hidden">
 
-    @include('web\_menu');
+    @include('web\layouts\_menu');
 
     
 

@@ -7,11 +7,12 @@ $dark-green:#21605D;
 $green:#339476;
 $light-gray: #EAEBED;
 
-@use '_orriNagusi';
-@use '_login';
-@use '_registro';
-@use '_froga1';
-@use '_maskotaFroga';
+@use 'layouts/_orriNagusi';
+@use 'layouts/_login';
+@use 'layouts/_registro';
+@use 'layouts/_froga1';
+@use 'layouts/_froga2';
+@use 'layouts/_maskotaFroga';
 
 @font-face {
     font-family: roboto-regular;

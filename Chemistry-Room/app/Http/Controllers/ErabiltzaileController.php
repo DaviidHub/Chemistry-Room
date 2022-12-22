@@ -24,7 +24,7 @@ class ErabiltzaileController extends Controller
         }
 
         session(['erab' => $usu]);
-        return view('web.orriNagusi');
+        return view('web.froga2');
 
     }
 

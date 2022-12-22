@@ -12,7 +12,7 @@
 
 <body class="overflow-hidden">
 
-    @include('web\_menuJuegos')
+    @include('web\layouts\_menuJuegos')
 
 
     <div class="container">
@@ -72,7 +72,7 @@
 
     </div>
 
-    @include('web\_maskotaFroga');
+    @include('web\layouts\_maskotaFroga');
 
 </body>
 
