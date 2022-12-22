@@ -23,9 +23,9 @@ Route::get('/registro', function () {
     return view('web.registro');
 })->name('web.registro');
 
-Route::get('/registro', function () {
-    return view('web.registro');
-})->name('web.registro');
+Route::get('/froga1', function () {
+    return view('web.froga1');
+})->name('web.froga1');
 
 
 
