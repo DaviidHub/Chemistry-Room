@@ -259,6 +259,19 @@ input {
   margin-left: 3%;
 }
 
+.divRespuesta {
+  width: 30%;
+  height: 100px;
+  background-color: #21605D;
+  border-radius: 1em;
+  margin-top: 4%;
+  margin-left: 3%;
+}
+
+.logoCarta {
+  width: 30%;
+}
+
 #maskotaJuego {
   width: 42%;
 }
