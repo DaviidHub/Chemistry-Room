@@ -21,51 +21,51 @@
         <div class="row text-center position-absolute right-0 espacio">
 
             <div class="col-4 divRespuesta">
-                <p>RESPUESTA</p>
+                <p></p>
             </div>
 
             <div class="col-4 divRespuesta">
-                <p>RESPUESTA</p>
+                <p></p>
             </div>
 
             <div class="col-4 divRespuesta">
-                <p>RESPUESTA</p>
+                <p></p>
             </div>
 
             <div class="col-4 divRespuesta">
-                <p>RESPUESTA</p>
+                <p></p>
             </div>
 
             <div class="col-4 divRespuesta">
-                <p>RESPUESTA</p>
+                <p></p>
             </div>
 
             <div class="col-4 divRespuesta">
-                <p>RESPUESTA</p>
+                <p></p>
             </div>
 
             <div class="col-4 divPregunta">
-                <p>PREGUNTA</p>
+                <p></p>
             </div>
 
             <div class="col-4 divPregunta">
-                <p>PREGUNTA</p>
+                <p></p>
             </div>
 
             <div class="col-4 divPregunta">
-                <p>PREGUNTA</p>
+                <p></p>
             </div>
 
             <div class="col-4 divPregunta">
-                <p>PREGUNTA</p>
+                <p></p>
             </div>
 
             <div class="col-4 divPregunta">
-                <p>PREGUNTA</p>
+                <p></p>
             </div>
 
             <div class="col-4 divPregunta">
-                <p>PREGUNTA</p>
+                <p></p>
             </div>
 
         </div>

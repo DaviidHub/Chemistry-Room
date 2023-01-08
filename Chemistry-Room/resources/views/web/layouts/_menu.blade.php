@@ -6,9 +6,10 @@
       <span class="align-self-center px-3">GA</span>
     </div>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Profila</a>
+      <a class="dropdown-item" href="{{route('web.infoUsu')}}">Profila</a>
       <a class="dropdown-item" href="#">Admin</a>
-      <a class="dropdown-item" href="#">Login / Logout</a>
+      <a class="dropdown-item" href="#">Login</a>
+      <a class="dropdown-item" href="{{route('web.logout')}}">Logout</a>
     </div>
   </div>
 </nav>
