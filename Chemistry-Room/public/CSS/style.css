@@ -312,6 +312,50 @@ input {
   font-size: 1rem;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.kontainer {
+  background-color: #339476;
+  margin: auto;
+  padding: 50px;
+  font-family: cabeza;
+}
+
+table {
+  width: 100%;
+}
+
+table, td, th {
+  border: 2px solid #21605D;
+}
+
+table, td > .sin {
+  border: 2px solid #339476;
+}
+
+.titulos {
+  text-align: center;
+  color: #21605D;
+  font-size: 150%;
+}
+
+.datos {
+  color: #EAEBED;
+  text-align: center;
+}
+
+td > .ekis {
+  background-color: transparent;
+  border: 0;
+  color: red;
+  font-weight: bold;
+  font-size: 150%;
+  box-shadow: none;
+}
+
 @font-face {
   font-family: roboto-regular;
   src: url(/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Regular.ttf);

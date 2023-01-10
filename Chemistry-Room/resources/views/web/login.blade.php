@@ -25,10 +25,10 @@
             <form id="formLogin" action="{{ route('web.login') }}" method="GET"
                 class="formLogin d-flex flex-column align-items-center mx-5" autocomplete="off">
 
-                <input class="inputLogin" type="text" placeholder="Mail" name="mail">
+                <input id="inputMail" class="inputLogin" type="text" placeholder="Mail" name="mail">
                 <input class="inputLogin" type="password" placeholder="Pasahitza" name="pasahitza">
 
-                <input type="submit" class=" border-0 rounded" value="BIDALI">
+                <input id="submitLogin" type="submit" class=" border-0 rounded" value="BIDALI">
             </form>
 
             <a href="{{ route('web.registro') }}" class="aRegister align-self-center ">REGISTER</a>
@@ -36,6 +36,15 @@
         </div>
 
     </div>
+
+    {{-- Swal --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- Vue 3 --}}
+    <script src="https://unpkg.com/vue@next"></script>
+    {{-- Vue Router  --}}
+    <script src="https://unpkg.com/vue-router@4"></script>
+    {{-- JS register --}}
+    <script src="{{asset('JS/login.js')}}"></script>
 
 </body>
 

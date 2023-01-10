@@ -1,0 +1,60 @@
+$drop-shadow: 0px 4px 4px 0 rgba(0 0 0/ .3);
+$inner-shadow: inset 0px 4px 4px 0 rgba(0 0 0/ .5);
+$img-shadow: 0px -4px 4px  rgba(0 0 0 / .5);
+$black: #191919;
+$dark-green:#21605D;
+$green:#339476;
+$light-gray: #EAEBED;
+$error: red;
+
+// EL GENERAL
+*{
+    margin: 0;
+    padding: 0;
+}
+
+// BODY
+.kontainer{
+    background-color: $green;
+    margin: auto;
+    padding: 50px;
+    font-family: cabeza;
+}
+
+// TAULA
+table{
+    width: 100%;
+}
+
+// TAULAREN BORDEAK + KOLOREA
+table, td, th {
+    border: 2px solid $dark-green;
+}
+
+// TAULAREN AZKEN ZUTABEA(BORDE GABE)
+table,td>.sin{
+    border: 2px solid $green;
+}
+
+//TAULAREN TITULUAK
+.titulos{
+    text-align: center;
+    color: $dark-green;
+    font-size: 150%;
+}
+
+//TAULAREN DATUAK
+.datos{
+    color: $light-gray;
+    text-align: center;
+}
+
+// TAULAREN "X"-A
+td>.ekis{
+    background-color: transparent;
+    border: 0;
+    color: $error;
+    font-weight: bold;
+    font-size: 150%;
+    box-shadow: none;
+}
