@@ -1,0 +1,395 @@
+*::selection {
+  color: #EAEBED;
+  background-color: #191919;
+}
+
+.menu {
+  background-color: #21605D;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 15vh;
+}
+.menu #titulo {
+  height: 17vh;
+  line-height: 25vh;
+  color: #339476;
+  font-weight: bolder;
+}
+
+.circle {
+  background-color: #339476;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.atom {
+  position: absolute;
+  top: 10vh;
+  box-shadow: 0 -4px 4px 0 rgba(0, 0, 0, 0.3);
+  font-size: 0;
+}
+.atom:active {
+  box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+.atom img {
+  top: 0;
+  width: 100px;
+  height: 90px;
+  -webkit-filter: invert(100%);
+  filter: invert(100%) drop-shadow(0 -4px 4px rgba(0, 0, 0, 0.5));
+}
+.atom img:hover {
+  animation: upDownAtom alternate infinite 2s ease-in-out;
+}
+
+.profile span {
+  color: #EAEBED;
+  font-size: 0.5em;
+}
+.profile:active {
+  box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-item {
+  height: min-content;
+}
+
+@keyframes upDownAtom {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(2px);
+  }
+}
+#tiempo {
+  color: #339476;
+  font-size: 70px;
+  font-weight: lighter;
+  font-family: roboto-thin;
+  margin-right: 1%;
+}
+
+.bocadilloON {
+  position: absolute;
+  top: 20vh;
+  right: 35vh;
+  margin-left: 14% !important;
+  height: 200px;
+  width: 300px;
+  background-color: #EAEBED;
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 2em 2em 2em 0;
+  animation: upDownBocadillo alternate infinite 2.5s linear;
+}
+.bocadilloON h2 {
+  color: #339476;
+  font-family: roboto-thin;
+}
+.bocadilloON p {
+  color: #339476;
+  font-size: medium;
+}
+
+.lola {
+  filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.5));
+}
+
+.dropdown-toggle:after {
+  display: none;
+}
+
+/*LOGIN*/
+input {
+  padding: 1%;
+}
+
+input[type=submit] {
+  width: 35%;
+  display: flex;
+  align-self: flex-end;
+  margin-top: 1em;
+  color: #21605D;
+  font-size: large;
+  font-weight: bold;
+}
+input[type=submit]:focus {
+  outline: 0;
+  border: 0;
+}
+
+input {
+  outline: none;
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.inputLogin {
+  border-radius: 10px;
+  border: 0;
+  height: 3em;
+  margin-top: 2em;
+}
+
+.kontenedorea {
+  margin-top: 13%;
+}
+
+.bocadillo {
+  position: absolute;
+  top: 10vh;
+  margin-left: 14% !important;
+  background-color: #EAEBED;
+  height: 140px;
+  width: 350px;
+  background-color: #EAEBED;
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 2em 2em 2em 0;
+  animation: upDownBocadillo alternate infinite 3s ease-in;
+}
+.bocadillo .loginText {
+  color: #339476;
+  font-family: roboto-thin;
+}
+
+.aRegister {
+  text-decoration: none;
+  color: #339476;
+}
+
+.loginText {
+  font-size: 600%;
+}
+
+.maskota {
+  width: 20%;
+  filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.5));
+}
+
+.divLogin {
+  background-color: #21605D;
+  border-radius: 0 1.5em 1.5em 0;
+  height: 300px;
+}
+
+@keyframes upDownBocadillo {
+  from {
+    transform: translateY(-8px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+/*Registro*/
+.bocadilloR {
+  position: absolute;
+  top: 10vh;
+  margin-right: 1% !important;
+  background-color: #EAEBED;
+  height: 140px;
+  width: 500px;
+  background-color: #EAEBED;
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 2em 2em 0em 2em;
+  animation: upDownBocadillo alternate infinite 3s ease-in;
+}
+.bocadilloR .registroText {
+  color: #339476;
+  font-family: roboto-thin;
+}
+
+.aLogin {
+  text-decoration: none;
+  color: #339476;
+}
+
+.registroText {
+  font-size: 5em;
+}
+
+.divRegistro {
+  background-color: #21605D;
+  border-radius: 1.5em 0em 0em 1.5em;
+  height: 350px;
+  width: 26em;
+  margin-top: 10px;
+}
+
+.inputRegister {
+  border-radius: 10px;
+  border: 0;
+  height: 3em;
+  width: 300px;
+  margin-top: 3px;
+  margin-top: 1em;
+}
+
+#nombreCorto {
+  width: 30%;
+}
+
+#apellidoCorto {
+  width: 60%;
+}
+
+.divRespuesta {
+  width: 30%;
+  height: 12vh;
+  background-color: #21605D;
+  border-radius: 1em;
+  margin-top: 4%;
+  margin-left: 3%;
+}
+
+.divPregunta {
+  width: 30%;
+  height: 12vh;
+  background-color: #EAEBED;
+  border-radius: 1em;
+  margin-top: 4%;
+  margin-left: 3%;
+}
+
+.divRespuesta {
+  width: 30%;
+  height: 100px;
+  background-color: #21605D;
+  border-radius: 1em;
+  margin-top: 4%;
+  margin-left: 3%;
+}
+
+.logoCarta {
+  width: 30%;
+}
+
+#maskotaJuego {
+  width: 42%;
+}
+
+.bombilla {
+  width: 20%;
+}
+
+.espacio {
+  left: 2%;
+  width: 75%;
+}
+
+.bocadilloPista {
+  margin-left: 14% !important;
+  background-color: #EAEBED;
+  height: 250px;
+  width: 300px;
+  background-color: #EAEBED;
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 0em 0em 0em 0;
+  animation: upDownBocadillo alternate infinite 3s ease-in;
+}
+.bocadilloPista:before {
+  border: 25px solid #EAEBED;
+  content: "";
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  position: absolute;
+  bottom: -48px;
+  filter: drop-shadow(0px 4px 4px 0 rgba(0, 0, 0, 0.3));
+  left: calc(50% - 60px);
+}
+.bocadilloPista .pistaText {
+  color: #339476;
+  font-family: roboto-regular;
+  font-size: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.kontainer {
+  background-color: #339476;
+  margin: auto;
+  padding: 50px;
+  font-family: cabeza;
+}
+
+table {
+  width: 100%;
+}
+
+table, td, th {
+  border: 2px solid #21605D;
+}
+
+table, td > .sin {
+  border: 2px solid #339476;
+}
+
+.titulos {
+  text-align: center;
+  color: #21605D;
+  font-size: 150%;
+}
+
+.datos {
+  color: #EAEBED;
+  text-align: center;
+}
+
+td > .ekis {
+  background-color: transparent;
+  border: 0;
+  color: red;
+  font-weight: bold;
+  font-size: 150%;
+  box-shadow: none;
+}
+
+@font-face {
+  font-family: roboto-regular;
+  src: url(/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: roboto-thin;
+  src: url(/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Thin.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+input[type=text],
+input[type=submit],
+input[type=password] {
+  background-color: #339476;
+  font-family: roboto-regular;
+}
+body::placeholder,
+input[type=text]::placeholder,
+input[type=submit]::placeholder,
+input[type=password]::placeholder {
+  color: #EAEBED;
+}
+
+@keyframes upDownBocadillo {
+  from {
+    transform: translateY(-8px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
