@@ -14,10 +14,13 @@
 
     @include('web\_menuJuegos')
 
-        <body>
-        <img src="{{ asset('./multimedia/Ahorcado/ahorcado_1.png') }}" class="Orca">
+    <body>
+        <div id="ahorcado">
+            <img id="orca" src="{{ asset('./multimedia/Ahorcado/ahorcado_1.png') }}">
+            <p id="error">a</p>
+        </div>
         <div>
-            <p id="Palabra">_ _ _ _ _ _ _ _ _ _ _ _ _</p>
+            <p id="palabra">_ _ _ _ _ _ _ _ _ _ _ _ _</p>
         </div>
     </body>
 

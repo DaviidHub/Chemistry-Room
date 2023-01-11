@@ -1,6 +1,22 @@
-.orca {
-    border: red solid;
+#orca {
     width: 300px;
     height: 300px;
-    margin: 30px;
+    margin: 60px;
+}
+
+#ahorcado {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#error {
+    margin-top: 50px;
+}
+
+#palabra {
+
+    font-size: 2em;
+    height: 20px;
+
+    margin-left: 100px;
 }
