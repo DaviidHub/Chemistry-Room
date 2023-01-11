@@ -40,6 +40,13 @@
 
     </div>
 
+    {{-- Swal --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- Vue 3 --}}
+    <script src="https://unpkg.com/vue@next"></script>
+    {{-- JS login --}}
+    <script src="{{asset('JS/login.js')}}"></script>
+
 </body>
 
 </html>

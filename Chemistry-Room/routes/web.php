@@ -23,9 +23,17 @@ Route::get('/registro', function () {
     return view('web.registro');
 })->name('web.registro');
 
+Route::get('/orriNagusi', function () {
+    return view('web.orriNagusi');
+})->name('web.orriNagusi');
+
 Route::get('/froga1', function () {
     return view('web.froga1');
 })->name('web.froga1');
+
+Route::get('/froga4', function () {
+    return view('web.froga4');
+})->name('web.froga4');
 
 Route::get('/adminKarpeta', [ErabiltzaileController::class, 'adminmode'])->name('adminKarpeta.admin');
 Route::get('/crear', [ErabiltzaileController::class, 'store'])->name('web.store');

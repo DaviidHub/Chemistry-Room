@@ -22,19 +22,19 @@
 
         <div class="divRegistro formLogin d-flex flex-column justify-content-between mx-5">
 
-            <form action="{{ route('web.store') }}" method="GET"
-            class="formRegistro d-flex flex-column align-items-center mx-5" autocomplete="off">
+            <form id="formRegister" action="{{ route('web.store') }}" method="GET"
+                class="formRegistro d-flex flex-column align-items-center mx-5" autocomplete="off">
                 @csrf
                 <div class="d-flex flex-row justify-content-around">
                     <input class="inputRegister" id="nombreCorto" type="text" placeholder="Izena" name="izena">
                     <input class="inputRegister" id="apellidoCorto" type="text" placeholder="Abizena" name="abizena">
                 </div>
 
-                <input class="inputRegister" type="text" placeholder="Mail" name="mail">
+                <input id="inputMail" class="inputRegister" type="text" placeholder="Mail" name="mail">
                 <input class="inputRegister" type="password" placeholder="Pasahitza" name="pasahitza">
                 <input class="inputRegister" type="password" placeholder="Berridatzi Pasahitza" name="pasahitzab">
 
-                <input type="submit" class=" border-0 rounded" value="BIDALI">
+                <input id="submitRegister" type="submit" class=" border-0 rounded" value="BIDALI">
             </form>
 
             <a href="{{ route('web.inicio') }}" class="aLogin align-self-center ">LOGIN</a>
@@ -44,6 +44,14 @@
         <img class="maskota" src="{{asset("multimedia/quimica.png")}}" alt="">
 
     </div>
+
+    {{-- Swal --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+    {{-- Vue 3 --}}
+    <script src="https://unpkg.com/vue@next"></script>
+    {{-- JS register --}}
+    <script src="{{asset('JS/register.js')}}"></script>
+
 
 </body>
 

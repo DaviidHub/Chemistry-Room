@@ -17,47 +17,47 @@
     <div class="container">
 
 
-        <div id="Datos" class="row text-center position-absolute right-0 espacio">
+        <div id="Datos1" class="row text-center position-absolute right-0 espacio">
 
             <div class="col-4 divIzena">
-                <p>@{{izena[0]}}</p>
+                <p>@{{izena1[0]}}</p>
             </div>
 
             <div class="col-4 divIzena">
-                <p>@{{izena[1]}}</p>
+                <p>@{{izena1[1]}}</p>
             </div>
 
             <div class="col-4 divIzena">
-                <p>@{{izena[2]}}</p>
+                <p>@{{izena1[2]}}</p>
             </div>
 
             <div class="col-4 divIzena">
-                <p>@{{izena[3]}}</p>
+                <p>@{{izena1[3]}}</p>
             </div>
 
             <div class="col-4 divIzena">
-                <p>@{{izena[4]}}</p>
+                <p>@{{izena1[4]}}</p>
             </div>
 
             <div class="col-4 divIzena">
-                <p>@{{izena[5]}}</p>
+                <p>@{{izena1[5]}}</p>
             </div>
 
             <div id="divDesk" class="d-flex flex-row mt-4">
 
                 <div class="herenak d-flex flex-column">
-                    <p>@{{desk[0]}}</p>
-                    <p>@{{desk[1]}}</p>
+                    <p>@{{desk1[0]}}</p>
+                    <p>@{{desk1[1]}}</p>
                 </div>
 
                 <div class="herenak  d-flex flex-column">
-                    <p>@{{desk[2]}}</p>
-                    <p>@{{desk[3]}}</p>
+                    <p>@{{desk1[2]}}</p>
+                    <p>@{{desk1[3]}}</p>
                 </div>
 
                 <div class="herenak d-flex flex-column">
-                    <p>@{{desk[4]}}</p>
-                    <p>@{{desk[5]}}</p>
+                    <p>@{{desk1[4]}}</p>
+                    <p>@{{desk1[5]}}</p>
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
 
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="{{asset("JS/froga1.js")}}"></script>
+    <script src="{{asset("JS/app.js")}}"></script>
 
 </body>
 

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('galdera', 90)->nullable();
             $table->string('erantzuna', 90)->nullable();
+            $table->string('medio', 90)->nullable();
             $table->unsignedBigInteger('id_pista')->nullable();
             $table->foreign('id_pista')->references('id')->on('Pistak');
             $table->timestamps();
