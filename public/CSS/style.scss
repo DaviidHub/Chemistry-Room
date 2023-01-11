@@ -1,0 +1,62 @@
+
+$drop-shadow: 0px 4px 4px 0 rgba(0 0 0/ .3);
+$inner-shadow: inset 0px 4px 4px 0 rgba(0 0 0/ .5);
+$img-shadow: 0px -4px 4px  rgba(0 0 0 / .5);
+$black: #191919;
+$dark-green:#21605D;
+$green:#339476;
+$light-gray: #EAEBED;
+
+@use 'layouts/_orriNagusi';
+@use 'layouts/_login';
+@use 'layouts/_registro';
+@use 'layouts/_froga1';
+@use 'layouts/_froga2';
+@use 'layouts/_froga4';
+@use 'layouts/_froga6';
+@use 'layouts/_maskotaFroga';
+@use 'layouts/_transicionBocadillo';
+
+@font-face {
+    font-family: roboto-regular;
+    src: url(/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: roboto-thin;
+    src: url(/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: roboto-light;
+    src: url(/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Light.ttf);
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+input[type=text],
+input[type=submit],
+input[type=password]{
+    background-color: $green;
+    font-family: roboto-regular;
+    color: $light-gray;
+    &::placeholder {
+        color: $light-gray;
+    }
+}
+
+@keyframes upDownBocadillo {
+    from{
+        transform: translateY(-8px);
+    }
+    to{
+        transform: translateY(10px);
+    }
+}
+
