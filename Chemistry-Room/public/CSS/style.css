@@ -352,6 +352,7 @@ h3 {
   font-size: 1rem;
 }
 
+<<<<<<< HEAD
 /* Transition */
 .aparecer-enter {
   opacity: 0;
@@ -369,6 +370,50 @@ h3 {
 /* Desaparecer */
 .aparecer-leave-active {
   transition: opacity 1s;
+=======
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.kontainer {
+  background-color: #339476;
+  margin: auto;
+  padding: 50px;
+  font-family: cabeza;
+}
+
+table {
+  width: 100%;
+}
+
+table, td, th {
+  border: 2px solid #21605D;
+}
+
+table, td > .sin {
+  border: 2px solid #339476;
+}
+
+.titulos {
+  text-align: center;
+  color: #21605D;
+  font-size: 150%;
+}
+
+.datos {
+  color: #EAEBED;
+  text-align: center;
+}
+
+td > .ekis {
+  background-color: transparent;
+  border: 0;
+  color: red;
+  font-weight: bold;
+  font-size: 150%;
+  box-shadow: none;
+>>>>>>> 8a98794364dc6b7e3df3ef5dc57b69d3fe1c29cc
 }
 
 @font-face {

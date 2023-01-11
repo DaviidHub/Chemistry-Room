@@ -14,7 +14,11 @@ $light-gray: #EAEBED;
 @use 'layouts/_froga2';
 @use 'layouts/_froga6';
 @use 'layouts/_maskotaFroga';
+<<<<<<< HEAD
 @use 'layouts/_transicionBocadillo';
+=======
+@use 'layouts/_admin';
+>>>>>>> 8a98794364dc6b7e3df3ef5dc57b69d3fe1c29cc
 
 @font-face {
     font-family: roboto-regular;
