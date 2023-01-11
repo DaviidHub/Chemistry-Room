@@ -27,6 +27,14 @@ Route::get('/froga1', function () {
     return view('web.froga1');
 })->name('web.froga1');
 
+Route::get('/froga3', function () {
+    return view('web.froga3');
+})->name('web.froga3');
+
+Route::get('/froga4', function () {
+    return view('web.froga4');
+})->name('web.froga4');
+
 
 
 Route::get('/adminKarpeta', [ErabiltzaileController::class, 'adminmode'])->name('adminKarpeta.admin');

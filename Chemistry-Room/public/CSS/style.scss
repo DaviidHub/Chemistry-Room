@@ -11,6 +11,8 @@ $light-gray: #EAEBED;
 @use '_login';
 @use '_registro';
 @use '_froga1';
+@use '_froga3';
+@use '_froga4';
 @use '_maskotaFroga';
 
 @font-face {
@@ -36,7 +38,7 @@ input[type=submit],
 input[type=password]{
     background-color: $green;
     font-family: roboto-regular;
-    
+
     &::placeholder {
         color: $light-gray;
     }

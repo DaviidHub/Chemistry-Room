@@ -259,6 +259,46 @@ input {
   margin-left: 3%;
 }
 
+.orca {
+  border: red solid;
+  width: 300px;
+  height: 300px;
+  margin: 30px;
+}
+
+body {
+  color: #EAEBED;
+  font-size: large;
+}
+
+.inp {
+  border: none;
+  width: 500px;
+  border-bottom: 1px solid;
+  padding: 5px 10px;
+  outline: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: text-indent 0.4s 0.4s ease;
+  text-indent: -100%;
+  opacity: 1;
+}
+
+.divMedioAcido {
+  margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.divMedioBasico {
+  margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #maskotaJuego {
   width: 42%;
 }
