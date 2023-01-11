@@ -18,13 +18,26 @@ class ErabiltzaileController extends Controller
         //
         $usuarios = Erabiltzaileak::where('mail','=',$request->mail)->get();
         foreach($usuarios as $usu){
-            if($request->pasahitza != $usu->pasahitza){
-                return view('Comercio.log-reg', 'El usuario es incorrecto');
+            if($request->pasahitza == $usu->pasahitza){
+                session(['erab' => $usu]);
+                return view('web.orriNagusi');
             }   
         }
 
-        session(['erab' => $usu]);
-        return view('web.froga2');
+        $error = '';
+        return view('web.login', compact('error'));
+
+    }
+
+    public function logout(Request $request)
+    {
+        // 
+        //Invalida la sesion
+        $request->session()->invalidate();
+        //La carga de nuevo y regenera token
+        $request->session()->regenerateToken();
+
+        return view('web.login');
 
     }
 
@@ -129,5 +142,3 @@ class ErabiltzaileController extends Controller
         //
     }
 }
-
-

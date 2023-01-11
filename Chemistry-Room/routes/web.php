@@ -27,9 +27,15 @@ Route::get('/froga1', function () {
     return view('web.froga1');
 })->name('web.froga1');
 
-
-
 Route::get('/adminKarpeta', [ErabiltzaileController::class, 'adminmode'])->name('adminKarpeta.admin');
 Route::get('/crear', [ErabiltzaileController::class, 'store'])->name('web.store');
-Route::get('/login', [ErabiltzaileController::class, 'login'])->name('web.login');
+Route::post('/login', [ErabiltzaileController::class, 'login'])->name('web.login');
+Route::get('/logout', [ErabiltzaileController::class, 'logout'])->name('web.logout');
 
+// Middleware
+
+Route::group(['Middleware' => 'middlewareSesion'], function(){
+    Route::get('/infoErab', function () {
+        return view('web.infoErab');
+    })->name('web.infoUsu');
+});
