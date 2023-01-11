@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="{{ asset('CSS/style.css') }}">
 </head>
 
-<body class="overflow-hidden">
+<body id="letra" class="overflow-hidden">
 
-    @include('web\_menuJuegos')
+    @include('web\layouts\_menuJuegos')
 
     <p class="text-center">Soluciona</p>
 
@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    @include('web\_maskotaFroga');
+    @include('web\layouts\_maskotaFroga')
 
 </body>
 

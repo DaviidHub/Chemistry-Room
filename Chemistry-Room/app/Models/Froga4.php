@@ -13,7 +13,7 @@ class Froga4 extends Model
 
     protected $primaryKey = "id";
  
-    protected $fillable = ['galdera', 'erantzuna', 'id_pista'];
+    protected $fillable = ['galdera', 'erantzuna', 'medio', 'id_pista'];
 
     public function Pistak(){
 

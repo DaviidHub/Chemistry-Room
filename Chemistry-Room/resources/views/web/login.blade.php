@@ -27,11 +27,7 @@
 
             <form id="formLogin" action="{{route('web.login') }}" method="post"
                 class="formLogin d-flex flex-column align-items-center mx-5" autocomplete="off">
-<<<<<<< HEAD
                 @csrf
-=======
-
->>>>>>> 8a98794364dc6b7e3df3ef5dc57b69d3fe1c29cc
                 <input id="inputMail" class="inputLogin" type="text" placeholder="Mail" name="mail">
                 <input class="inputLogin" type="password" placeholder="Pasahitza" name="pasahitza">
 
@@ -48,9 +44,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{-- Vue 3 --}}
     <script src="https://unpkg.com/vue@next"></script>
-    {{-- Vue Router  --}}
-    <script src="https://unpkg.com/vue-router@4"></script>
-    {{-- JS register --}}
+    {{-- JS login --}}
     <script src="{{asset('JS/login.js')}}"></script>
 
 </body>

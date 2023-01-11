@@ -34,7 +34,7 @@
                 <input class="inputRegister" type="password" placeholder="Pasahitza" name="pasahitza">
                 <input class="inputRegister" type="password" placeholder="Berridatzi Pasahitza" name="pasahitzab">
 
-                <input @click="" id="submitRegister" type="submit" class=" border-0 rounded" value="BIDALI">
+                <input id="submitRegister" type="submit" class=" border-0 rounded" value="BIDALI">
             </form>
 
             <a href="{{ route('web.inicio') }}" class="aLogin align-self-center ">LOGIN</a>
@@ -51,6 +51,7 @@
     <script src="https://unpkg.com/vue@next"></script>
     {{-- JS register --}}
     <script src="{{asset('JS/register.js')}}"></script>
+
 
 </body>
 

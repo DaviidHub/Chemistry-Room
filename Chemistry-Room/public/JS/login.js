@@ -1,4 +1,5 @@
-let inputMail, mailBool;
+    let inputMail;
+    let mailBool= false;
 
 const vm = {
     mounted() {
