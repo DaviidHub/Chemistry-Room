@@ -18,7 +18,7 @@
     <div class="kontenedorea d-flex justify-content-center">
 
         <div class="bocadillo d-flex justify-content-center">
-            <h2 class="loginText align-self-center">LOGIN</h2>
+            <h2 class="loginText align-self-center">prueba</h2>
         </div>
 
         <img class="maskota" src="{{asset('multimedia/quimica.png')}}" alt="">
