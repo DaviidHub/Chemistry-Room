@@ -241,7 +241,7 @@ input {
   width: 60%;
 }
 
-.divRespuesta {
+.divIzena {
   width: 30%;
   height: 12vh;
   background-color: #21605D;
@@ -250,13 +250,9 @@ input {
   margin-left: 3%;
 }
 
-.divPregunta {
-  width: 30%;
-  height: 12vh;
-  background-color: #EAEBED;
-  border-radius: 1em;
-  margin-top: 4%;
-  margin-left: 3%;
+.herenak {
+  width: 40%;
+  padding: 1em;
 }
 
 .divRespuesta {

@@ -28,10 +28,10 @@
             <form id="formLogin" action="{{route('web.login') }}" method="post"
                 class="formLogin d-flex flex-column align-items-center mx-5" autocomplete="off">
                 @csrf
-                <input class="inputLogin" type="text" placeholder="Mail" name="mail">
+                <input id="inputMail" class="inputLogin" type="text" placeholder="Mail" name="mail">
                 <input class="inputLogin" type="password" placeholder="Pasahitza" name="pasahitza">
 
-                <input type="submit" class=" border-0 rounded" value="BIDALI">
+                <input id="submitLogin" type="submit" class=" border-0 rounded" value="BIDALI">
             </form>
 
             <a href="{{ route('web.registro') }}" class="aRegister align-self-center ">REGISTER</a>

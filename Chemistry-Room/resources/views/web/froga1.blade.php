@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Froga1</title>
     <link rel="stylesheet" href="{{asset("CSS/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("CSS/style.css")}}">
 </head>
@@ -14,65 +14,61 @@
 
     @include('web\layouts\_menuJuegos')
 
-
     <div class="container">
 
 
-        <div class="row text-center position-absolute right-0 espacio">
+        <div id="Datos" class="row text-center position-absolute right-0 espacio">
 
-            <div class="col-4 divRespuesta">
-                <p></p>
+            <div class="col-4 divIzena">
+                <p>@{{izena[0]}}</p>
             </div>
 
-            <div class="col-4 divRespuesta">
-                <p></p>
+            <div class="col-4 divIzena">
+                <p>@{{izena[1]}}</p>
             </div>
 
-            <div class="col-4 divRespuesta">
-                <p></p>
+            <div class="col-4 divIzena">
+                <p>@{{izena[2]}}</p>
             </div>
 
-            <div class="col-4 divRespuesta">
-                <p></p>
+            <div class="col-4 divIzena">
+                <p>@{{izena[3]}}</p>
             </div>
 
-            <div class="col-4 divRespuesta">
-                <p></p>
+            <div class="col-4 divIzena">
+                <p>@{{izena[4]}}</p>
             </div>
 
-            <div class="col-4 divRespuesta">
-                <p></p>
+            <div class="col-4 divIzena">
+                <p>@{{izena[5]}}</p>
             </div>
 
-            <div class="col-4 divPregunta">
-                <p></p>
-            </div>
+            <div id="divDesk" class="d-flex flex-row mt-4">
 
-            <div class="col-4 divPregunta">
-                <p></p>
-            </div>
+                <div class="herenak d-flex flex-column">
+                    <p>@{{desk[0]}}</p>
+                    <p>@{{desk[1]}}</p>
+                </div>
 
-            <div class="col-4 divPregunta">
-                <p></p>
-            </div>
+                <div class="herenak  d-flex flex-column">
+                    <p>@{{desk[2]}}</p>
+                    <p>@{{desk[3]}}</p>
+                </div>
 
-            <div class="col-4 divPregunta">
-                <p></p>
+                <div class="herenak d-flex flex-column">
+                    <p>@{{desk[4]}}</p>
+                    <p>@{{desk[5]}}</p>
+                </div>
             </div>
-
-            <div class="col-4 divPregunta">
-                <p></p>
-            </div>
-
-            <div class="col-4 divPregunta">
-                <p></p>
-            </div>
-
         </div>
 
     </div>
 
-    @include('web\layouts\_maskotaFroga');
+    @include('web\layouts\_maskotaFroga')
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="{{asset("JS/froga1.js")}}"></script>
 
 </body>
 
