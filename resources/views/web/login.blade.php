@@ -45,7 +45,7 @@
     {{-- Vue 3 --}}
     <script src="https://unpkg.com/vue@next"></script>
     {{-- JS login --}}
-    <script src="{{asset('JS/login.js')}}"></script>
+    <script src="{{asset("JS/login.js")}}"></script>
 
 </body>
 

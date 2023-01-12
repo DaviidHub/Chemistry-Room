@@ -18,7 +18,6 @@ Route::get('/web', function () {
 return view('web.login', );
 })->name('web.inicio');
 
-
 Route::get('/registro', function () {
     return view('web.registro');
 })->name('web.registro');
@@ -30,6 +29,14 @@ Route::get('/orriNagusi', function () {
 Route::get('/froga1', function () {
     return view('web.froga1');
 })->name('web.froga1');
+
+Route::get('/froga2', function () {
+    return view('web.froga2');
+})->name('web.froga2');
+
+Route::get('/froga3', function () {
+    return view('web.froga3');
+})->name('web.froga3');
 
 Route::get('/froga4', function () {
     return view('web.froga4');

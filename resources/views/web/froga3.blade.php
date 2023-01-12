@@ -12,7 +12,7 @@
 
 <body class="overflow-hidden">
 
-    @include('web\_menuJuegos')
+    @include('web\layouts\_menuJuegos')
 
     <body>
         <div id="ahorcado">
@@ -24,7 +24,10 @@
         </div>
     </body>
 
-    @include('web\_maskotaFroga');
+    @include('web\layouts\_maskotaFroga');
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="{{asset("JS/app.js")}}"></script>
 
 </body>
 
