@@ -60,7 +60,11 @@
         </div>
     </div>
 
-    @include('web\layouts\_maskotaFroga')
+    <aside>
+        @include('web\layouts\_maskotaFroga')
+    </aside>
+
+
 
 </body>
 

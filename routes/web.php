@@ -42,6 +42,14 @@ Route::get('/froga4', function () {
     return view('web.froga4');
 })->name('web.froga4');
 
+Route::get('/froga5', function () {
+    return view('web.froga5');
+})->name('web.froga5');
+
+Route::get('/froga6', function () {
+    return view('web.froga6');
+})->name('web.froga6');
+
 Route::get('/adminKarpeta', [ErabiltzaileController::class, 'adminmode'])->name('adminKarpeta.admin');
 Route::get('/crear', [ErabiltzaileController::class, 'store'])->name('web.store');
 Route::post('/login', [ErabiltzaileController::class, 'login'])->name('web.login');

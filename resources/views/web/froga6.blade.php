@@ -32,7 +32,7 @@
     <main>
 
         @include('web\layouts\_menuJuegos')
-       
+
         <div class="container d-flex flex-column justify-content-around">
 
             <div class="creador d-flex flex-row text-center position-absolute right-0 espacio justify-content-between">
@@ -43,14 +43,14 @@
 
                     <tr class="cuadrado">
                         <td>
-                            <h3>Henri Moissan</h3>
+                            <h3>@{{izena[0]}}</h3>
                         </td>
                         <td> <input class="nombreQuimico" type="text"> </td>
                     </tr>
 
                     <tr class="cuadrado">
                         <td>
-                            <h3>Ferdinand Reich</h3>
+                            <h3>@{{izena[1]}}</h3>
                         </td>
                         <td> <input class="nombreQuimico" type="text"> </td>
                     </tr>
@@ -58,21 +58,21 @@
 
                     <tr class="cuadrado">
                         <td>
-                            <h3>John W. Strutt</h3>
+                            <h3>@{{izena[2]}}</h3>
                         </td>
                         <td> <input class="nombreQuimico" type="text"> </td>
                     </tr>
 
                     <tr class="cuadrado">
                         <td>
-                            <h3>Lars F. Nilson</h3>
+                            <h3>@{{izena[3]}}</h3>
                         </td>
                         <td> <input class="nombreQuimico" type="text"> </td>
                     </tr>
 
                     <tr class="cuadrado">
                         <td>
-                            <h3>William Gregor</h3>
+                            <h3>@{{izena[4]}}</h3>
                         </td>
                         <td> <input class="nombreQuimico" type="text"> </td>
                     </tr>

@@ -7,6 +7,29 @@ $drop-shadow: 0 4px 4px 0 rgba(0 0 0 / .3);
 $inner-shadow: inset 0 4px 4px 0 rgba(0 0 0 / .5);
 $img-shadow: 0 -4px 4px rgba(0 0 0 / .5);
 
+#froga5Cuerpo {
+    display: grid;
+    grid-template-areas:
+    "h h h"
+    "m b b"
+    "m b b";
+}
+
+#froga5Cuerpo > header {
+    grid-area: h;
+}
+
+#froga5Cuerpo > main {
+    grid-area: m;
+    background-color: blue;
+}
+
+#froga5Cuerpo > #maskota {
+    grid-area: b;
+    background-color: yellow;
+    width: 10em;
+}
+
 .talde{
     width: 300px;
     height: 350px;
@@ -17,7 +40,7 @@ $img-shadow: 0 -4px 4px rgba(0 0 0 / .5);
 .tituloTalde{
     width: 100%;
     height: 75px;
-    background-color: #191919;
+    background-color: $black;
 }
 
 #hitzRandom{

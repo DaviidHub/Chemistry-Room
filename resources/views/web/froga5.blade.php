@@ -10,32 +10,35 @@
     <link rel="stylesheet" href="{{asset("CSS/style.css")}}">
 </head>
 
-<body>
+<body id="froga5Cuerpo">
 
-    @include('web\layouts\_menuJuegos')
+    <header>
+        @include('web\layouts\_menuJuegos')
+    </header>
+
 
     <main class="container my-3">
         <article class="d-flex flex-row justify-content-around my-3">
 
-            <section class="talde mx-3">
+            <section class="talde mx-2">
                 <div class="tituloTalde d-flex align-items-center justify-content-center">
                     <h2>Analisis</h2>
                 </div>
             </section>
 
-            <section class="talde mx-3">
+            <section class="talde mx-2">
                 <div class="tituloTalde d-flex align-items-center justify-content-center">
                     <h2>Microbiologia</h2>
                 </div>
             </section>
 
-            <section class="talde mx-3">
+            <section class="talde mx-2">
                 <div class="tituloTalde d-flex align-items-center justify-content-center">
                     <h2>Medida</h2>
                 </div>
             </section>
 
-            <section class="talde mx-3">
+            <section class="talde mx-2  ">
                 <div class="tituloTalde d-flex align-items-center justify-content-center">
                     <h2>Biotecnologia</h2>
                 </div>
@@ -75,7 +78,11 @@
 
     </main>
 
-    @include('web\layouts\_maskotaFroga');
+    <aside id="maskota">
+        @include('web\layouts\_maskotaFroga')
+    </article>
+
+
 
 </body>
 

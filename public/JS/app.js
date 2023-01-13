@@ -50,7 +50,7 @@ const vmFroga1 = {
     mounted() {
         this.cargarDatos();
         this.numAleatoriosNoRepes(6);
-    },
+    },  
     data() {
         return {
             izena1: [],
