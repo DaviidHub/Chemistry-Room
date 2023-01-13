@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="{{asset('CSS/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('CSS/style.css')}}">
 </head>
@@ -45,7 +45,7 @@
     {{-- Vue 3 --}}
     <script src="https://unpkg.com/vue@next"></script>
     {{-- JS login --}}
-    <script src="{{asset("JS/login.js")}}"></script>
+    <script src="{{asset('JS/login.js')}}"></script>
 
 </body>
 

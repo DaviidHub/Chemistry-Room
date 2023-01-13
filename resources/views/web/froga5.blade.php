@@ -5,40 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Froga 5</title>
+    <title>FROGA 5</title>
     <link rel="stylesheet" href="{{asset("CSS/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("CSS/style.css")}}">
 </head>
 
-<body id="froga5Cuerpo">
+<body>
 
-    <header>
-        @include('web\layouts\_menuJuegos')
-    </header>
+    @include('web\layouts\_menuJuegos')
 
+    <main id="froga5" class="container mx-5 my-3">
+        <article id="hola" class="d-flex flex-row justify-content-around my-3">
 
-    <main class="container my-3">
-        <article class="d-flex flex-row justify-content-around my-3">
-
-            <section class="talde mx-2">
+            <section class="talde mx-3">
                 <div class="tituloTalde d-flex align-items-center justify-content-center">
                     <h2>Analisis</h2>
                 </div>
             </section>
 
-            <section class="talde mx-2">
+            <section class="talde mx-3">
                 <div class="tituloTalde d-flex align-items-center justify-content-center">
                     <h2>Microbiologia</h2>
                 </div>
             </section>
 
-            <section class="talde mx-2">
+            <section class="talde mx-3">
                 <div class="tituloTalde d-flex align-items-center justify-content-center">
                     <h2>Medida</h2>
                 </div>
             </section>
 
-            <section class="talde mx-2  ">
+            <section class="talde mx-3">
                 <div class="tituloTalde d-flex align-items-center justify-content-center">
                     <h2>Biotecnologia</h2>
                 </div>
@@ -78,11 +75,7 @@
 
     </main>
 
-    <aside id="maskota">
-        @include('web\layouts\_maskotaFroga')
-    </article>
-
-
+    @include('web\layouts\_maskotaFroga');
 
 </body>
 

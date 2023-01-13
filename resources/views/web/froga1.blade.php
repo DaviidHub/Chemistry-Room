@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Froga1</title>
+    <title>FROGA 1</title>
     <link rel="stylesheet" href="{{asset("CSS/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("CSS/style.css")}}">
+
 </head>
 
 <body class="overflow-hidden">
@@ -15,7 +16,6 @@
     @include('web\layouts\_menuJuegos')
 
     <div class="container">
-
 
         <div id="Datos1" class="row text-center position-absolute right-0 espacio">
 
@@ -67,7 +67,11 @@
     @include('web\layouts\_maskotaFroga')
 
 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    {{-- Swal --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- Vue 3 --}}
+    <script src="https://unpkg.com/vue@next"></script>
+    {{-- JS  --}}
     <script src="{{asset("JS/app.js")}}"></script>
 
 </body>

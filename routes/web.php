@@ -18,6 +18,7 @@ Route::get('/web', function () {
 return view('web.login', );
 })->name('web.inicio');
 
+
 Route::get('/registro', function () {
     return view('web.registro');
 })->name('web.registro');
@@ -52,7 +53,7 @@ Route::get('/froga6', function () {
 
 Route::get('/adminKarpeta', [ErabiltzaileController::class, 'adminmode'])->name('adminKarpeta.admin');
 Route::get('/crear', [ErabiltzaileController::class, 'store'])->name('web.store');
-Route::post('/login', [ErabiltzaileController::class, 'login'])->name('web.login');
+Route::post('/orriNagusi', [ErabiltzaileController::class, 'login'])->name('web.login');
 Route::get('/logout', [ErabiltzaileController::class, 'logout'])->name('web.logout');
 
 // Middleware

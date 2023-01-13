@@ -2,17 +2,16 @@
 
 include 'konexioa.php';
 
-$datuak = $miPDO->prepare('SELECT * FROM froga6;');
+$datuak = $miPDO->prepare('SELECT * FROM froga6 WHERE zhitz = 5;');
 $datuak->execute();
-$izenak = [];
-$desk = [];
+$galdera = [];
+$erantzuna = [];
 
 foreach($datuak as $clave => $valor){
-    array_push($izenak,$valor['izena']);
-    array_push($emaitza,$valor['emaitza']);
-    array_push($zenb,$valor['zhitz']);
+    array_push($galdera,$valor['galdera']);
+    array_push($erantzuna,$valor['erantzuna']);
 }
-echo json_encode(array($izenak,$emaitza,$zenb));
+echo json_encode(array($galdera,$erantzuna));
 
 
 ?>

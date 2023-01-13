@@ -1,5 +1,4 @@
     let inputMail;
-    let mailBool= false;
 
 const vm = {
     mounted() {
@@ -7,7 +6,8 @@ const vm = {
     },
     data() {
         return {
-            personas: []
+            personas: [],
+            mailBool: true
         }
     },
     methods: {
@@ -20,21 +20,29 @@ const vm = {
                         body: '#formLogin'
                     }).then(response => response.json())
                     .then(data => {
+                        
                         data.forEach(databaseMail => {
-                            if ( inputMail != "" && databaseMail != inputMail) {
-                                mailBool = true
-                                Swal.fire({
-                                    icon: 'error',
-                                    title: 'Oops...',
-                                    text: 'Maila ez dago erregistratuta',
-                                    footer: '<a href="./registro">Erregistratu</a>'
-                                })
+                            console.log("mailBool FOREACH: ", this.mailBool);
+                            console.log("🚀 ~ file: login.js:27 ~ document.querySelector ~ databaseMail", databaseMail)
+                            console.log("🚀 ~ file: login.js:28 ~ document.querySelector ~ inputMail", inputMail)
+                            if ( databaseMail == inputMail) {
+                                this.mailBool = false
+                                console.log("mailBool IF: ", this.mailBool);
                             }
                         })
+
+                        if (this.mailBool) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Maila ez dago erregistratuta',
+                                footer: '<a href="./registro">Erregistratu</a>'
+                            })
+                            this.mailBool = false;
+                        } else{
+                            document.querySelector('#formLogin').submit();
+                        }
                     });
-                if (mailBool) {
-                    document.querySelector('#formLogin').submit();
-                }
             });
         }
     }

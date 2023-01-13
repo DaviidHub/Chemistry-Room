@@ -1,31 +1,7 @@
-#cuerpo{
-    display: grid;
-    grid-template-areas:
-    "h h h"
-    "m m a"
-    "m m a";
-}
-
-#cuerpo > header {
-    background-color: white;
-    grid-area: h;
-}
-
-#cuerpo > main {
-    border: 1px solid black;
-    border-radius: 5px;
-    grid-area: m;
-    margin: 50px;
-    width: 100%;
-}
-
-#cuerpo > article {
-    grid-area: a;
-}
-
 #orca {
     width: 300px;
     height: 300px;
+    margin: 60px;
 }
 
 #ahorcado {
@@ -40,10 +16,9 @@
 }
 
 #palabra {
-    font-size: 3em;
 
+    font-size: 2em;
+    height: 20px;
 
-    margin-left: 250px;
+    margin-left: 100px;
 }
-
-

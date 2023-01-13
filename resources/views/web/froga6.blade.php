@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FROGA 6</title>
     <link rel="stylesheet" href="{{asset("CSS/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("CSS/style.css")}}">
     <link href="https://unpkg.com/animate.css@3.5.1/animate.min.css" rel="stylesheet" type="text/css">
@@ -32,7 +32,7 @@
     <main>
 
         @include('web\layouts\_menuJuegos')
-
+       
         <div class="container d-flex flex-column justify-content-around">
 
             <div class="creador d-flex flex-row text-center position-absolute right-0 espacio justify-content-between">
@@ -43,14 +43,14 @@
 
                     <tr class="cuadrado">
                         <td>
-                            <h3>@{{izena[0]}}</h3>
+                            <h3>Henri Moissan</h3>
                         </td>
                         <td> <input class="nombreQuimico" type="text"> </td>
                     </tr>
 
                     <tr class="cuadrado">
                         <td>
-                            <h3>@{{izena[1]}}</h3>
+                            <h3>Ferdinand Reich</h3>
                         </td>
                         <td> <input class="nombreQuimico" type="text"> </td>
                     </tr>
@@ -58,21 +58,21 @@
 
                     <tr class="cuadrado">
                         <td>
-                            <h3>@{{izena[2]}}</h3>
+                            <h3>John W. Strutt</h3>
                         </td>
                         <td> <input class="nombreQuimico" type="text"> </td>
                     </tr>
 
                     <tr class="cuadrado">
                         <td>
-                            <h3>@{{izena[3]}}</h3>
+                            <h3>Lars F. Nilson</h3>
                         </td>
                         <td> <input class="nombreQuimico" type="text"> </td>
                     </tr>
 
                     <tr class="cuadrado">
                         <td>
-                            <h3>@{{izena[4]}}</h3>
+                            <h3>William Gregor</h3>
                         </td>
                         <td> <input class="nombreQuimico" type="text"> </td>
                     </tr>
