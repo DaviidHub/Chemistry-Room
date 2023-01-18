@@ -72,7 +72,7 @@
     {{-- Vue 3 --}}
     <script src="https://unpkg.com/vue@next"></script>
     {{-- JS  --}}
-    <script src="{{asset("JS/app.js")}}"></script>
+    <script src="{{asset("JS/froga1.js")}}"></script>
 
 </body>
 
