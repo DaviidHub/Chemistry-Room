@@ -8,7 +8,6 @@
     <title>FROGA 1</title>
     <link rel="stylesheet" href="{{asset("CSS/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("CSS/style.css")}}">
-
 </head>
 
 <body class="overflow-hidden">
@@ -16,6 +15,11 @@
     @include('web\layouts\_menuJuegos')
 
     <div class="container">
+
+
+        <form action="../public/php/datosFroga1.php">
+            <input type="submit" value="Enviar">
+        </form>
 
         <div id="Datos1" class="row text-center position-absolute right-0 espacio">
 

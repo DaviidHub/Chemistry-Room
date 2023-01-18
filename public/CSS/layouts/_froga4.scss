@@ -7,13 +7,6 @@ $drop-shadow: 0 4px 4px 0 rgba(0 0 0 / .3);
 $inner-shadow: inset 0 4px 4px 0 rgba(0 0 0 / .5);
 $img-shadow: 0 -4px 4px rgba(0 0 0 / .5);
 
-#froga4Cuerpo {
-    display: grid;
-    grid-template-areas:
-    ""
-    "";
-}
-
 #letra {
     color: $light-gray;
     font-size: large;

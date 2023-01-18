@@ -38,19 +38,19 @@
             <div class="creador d-flex flex-row text-center position-absolute right-0 espacio justify-content-between">
 
 
-                <table class="Cientificos text-center ">
+                <table  id="Datos6" class="Cientificos text-center ">
 
 
                     <tr class="cuadrado">
                         <td>
-                            <h3>@{{izena[0]}}</h3>
+                            <h3>@{{galdera6[0]}}</h3>
                         </td>
                         <td> <input class="nombreQuimico" type="text"> </td>
                     </tr>
 
                     <tr class="cuadrado">
                         <td>
-                            <h3>@{{izena[1]}}</h3>
+                            <h3>@{{galdera6[1]}}</h3>
                         </td>
                         <td> <input class="nombreQuimico" type="text"> </td>
                     </tr>
@@ -58,21 +58,21 @@
 
                     <tr class="cuadrado">
                         <td>
-                            <h3>@{{izena[2]}}</h3>
+                            <h3>@{{galdera6[2]}}</h3>
                         </td>
                         <td> <input class="nombreQuimico" type="text"> </td>
                     </tr>
 
                     <tr class="cuadrado">
                         <td>
-                            <h3>@{{izena[3]}}</h3>
+                            <h3>@{{galdera6[3]}}</h3>
                         </td>
                         <td> <input class="nombreQuimico" type="text"> </td>
                     </tr>
 
                     <tr class="cuadrado">
                         <td>
-                            <h3>@{{izena[4]}}</h3>
+                            <h3>@{{galdera6[4]}}</h3>
                         </td>
                         <td> <input class="nombreQuimico" type="text"> </td>
                     </tr>
@@ -91,8 +91,9 @@
         </div>
     </main>
 
-    <script src="https://unpkg.com/vue@next%22%3E"></script>
-    <script src="{{asset('JS/bocadillo.js')}}"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    {{-- <script src="{{asset('JS/bocadillo.js')}}"></script> --}}
+    <script src="{{asset('JS/froga6.js')}}"></script>
 </body>
 
 </html>

@@ -22,7 +22,7 @@
             <div class="divMedioAcido">
                 <div class="m-3">
                     <p>@{{galdera4[0]}}</p>
-                    <input class="inp">
+                    <input v-model="respuestaInput4[0]" class="inp">
                 </div>
                 <div class="m-3">
                     <p>@{{galdera4[1]}}</p>

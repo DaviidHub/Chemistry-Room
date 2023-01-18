@@ -1,36 +1,45 @@
-let numeros = [];
-let galderak = [];
-let erantzunak = [];
-
-const vm = {
+// FROGA 4 VUE
+const vmFroga4 = {
     mounted() {
         this.cargarDatos();
-        this.numAleatorios();
+        this.numAleatoriosNoRepes(4);
+    },
+    data() {
+        return {
+            numeros4: [],
+            unicos4: [],
+            galdera4: [],
+            respuestaInput4: [],
+            erantzuna4: []
+        }
     },
     methods: {
         cargarDatos() {
             fetch("../public/php/datosFroga4.php", {
                     method: "POST",
-                    body: '#Datos'
+                    body: '#Datos4'
                 }).then(response => response.json())
                 .then(data => {
-                    for (let i = 0; i < 6; i++) {
-                       
-                        console.log(numeros[i])
-                        galderak.push(data[0][numeros[i]])
-                        erantzunak.push(data[1][numeros[i]])
+                    console.log("🚀 ~ file: froga4.js:29 ~ cargarDatos ~ data", data)
+                    for (let i = 0; this.numeros4.length > i; i++) {
+                        this.galdera4.push(data[0][this.numeros4[i]]);
+                        this.respuestaInput4.push(data[0][this.numeros4[i]]);
 
-                       
                     }
+                    console.log("🚀 ~ file: froga4.js:26 ~ cargarDatos ~ galdera4", this.galdera4)
                 });
-
         },
-        numAleatorios() {
-            for (let i = 0; i < 6; i++) {
-                let num = Math.round(Math.random() * (28 - 0) + 0);
-                numeros.push(num);
+        numAleatoriosNoRepes(kant) {
+            let i = 0;
+            while (i < kant) {
+                let num = Math.round(Math.random() * (20 - 0) + 0);
+                if (!this.numeros4.includes(num)) {
+                    this.numeros4.push(num);
+                    i++;
+                }
             }
         }
-    },
+    }
 };
-Vue.createApp(vm).mount('#Datos')
+ Vue.createApp(vmFroga4).mount('#Datos4')
+
