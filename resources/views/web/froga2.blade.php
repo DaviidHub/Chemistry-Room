@@ -8,6 +8,7 @@
     <title>FROGA 2</title>
     <link rel="stylesheet" href="{{asset("CSS/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("CSS/style.css")}}">
+    @vite(['resources/js/app.js','resources/css/app.css'])
 </head>
 
 <body class="overflow-hidden">

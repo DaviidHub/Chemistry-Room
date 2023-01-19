@@ -268,31 +268,10 @@ input {
   width: 30%;
 }
 
-#cuerpo {
-  display: grid;
-  grid-template-areas: "h h h" "m m a" "m m a";
-}
-
-#cuerpo > header {
-  background-color: white;
-  grid-area: h;
-}
-
-#cuerpo > main {
-  border: 1px solid black;
-  border-radius: 5px;
-  grid-area: m;
-  margin: 50px;
-  width: 100%;
-}
-
-#cuerpo > article {
-  grid-area: a;
-}
-
-#orca {
+#horca {
   width: 300px;
   height: 300px;
+  margin: 60px;
 }
 
 #ahorcado {
@@ -300,20 +279,40 @@ input {
   flex-wrap: wrap;
 }
 
-#error {
+#letrasMal {
   margin-top: 40px;
   color: red;
   font-size: 3em;
 }
 
 #palabra {
-  font-size: 3em;
-  margin-left: 250px;
+  font-size: 2em;
+  height: 20px;
+  margin-left: 2vh;
 }
 
-#froga4Cuerpo {
-  display: grid;
-  grid-template-areas: "" "";
+.datosDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.inputLetra {
+  background-color: #21605D !important;
+  border: none;
+  width: 5% !important;
+  margin-left: 5%;
+  border-radius: 10px;
+  color: #EAEBED;
+}
+
+#BidaliLetra {
+  background-color: transparent;
+  border: none;
+  width: 5%;
+}
+
+#bidaliArgazki {
+  width: 30% !important;
 }
 
 #letra {
@@ -349,22 +348,8 @@ input {
   flex-wrap: wrap;
 }
 
-#froga5Cuerpo {
-  display: grid;
-  grid-template-areas: "h h h" "m b b" "m b b";
-}
-
-#froga5Cuerpo > header {
-  grid-area: h;
-}
-
-#froga5Cuerpo > main {
-  grid-area: m;
-}
-
-#froga5Cuerpo > #maskota {
-  grid-area: b;
-  width: 4m;
+#hola {
+  width: 80%;
 }
 
 .talde {

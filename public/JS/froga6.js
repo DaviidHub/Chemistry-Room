@@ -37,4 +37,3 @@ const vmFroga6 = {
     }
 };
  Vue.createApp(vmFroga6).mount('#Datos6')
-

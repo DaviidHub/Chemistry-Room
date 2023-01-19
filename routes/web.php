@@ -18,7 +18,6 @@ Route::get('/web', function () {
 return view('web.login', );
 })->name('web.inicio');
 
-
 Route::get('/registro', function () {
     return view('web.registro');
 })->name('web.registro');
@@ -50,6 +49,10 @@ Route::get('/froga5', function () {
 Route::get('/froga6', function () {
     return view('web.froga6');
 })->name('web.froga6');
+
+Route::get('/profila', function () {
+    return view('web.profila', );
+    })->name('web.profila');
 
 Route::get('/adminKarpeta', [ErabiltzaileController::class, 'adminmode'])->name('adminKarpeta.admin');
 Route::get('/crear', [ErabiltzaileController::class, 'store'])->name('web.store');
