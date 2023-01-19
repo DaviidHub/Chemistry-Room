@@ -16,11 +16,6 @@
 
     <div class="container">
 
-
-        <form action="../public/php/datosFroga1.php">
-            <input type="submit" value="Enviar">
-        </form>
-
         <div id="Datos1" class="row text-center position-absolute right-0 espacio">
 
             <div class="col-4 divIzena">
@@ -70,14 +65,12 @@
 
     @include('web\layouts\_maskotaFroga')
 
-
     {{-- Swal --}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{-- Vue 3 --}}
     <script src="https://unpkg.com/vue@next"></script>
     {{-- JS  --}}
     <script src="{{asset("JS/froga1.js")}}"></script>
-
 </body>
 
 </html>
