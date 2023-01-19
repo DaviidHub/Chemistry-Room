@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="{{asset('CSS/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('CSS/style.css')}}">
 </head>
@@ -18,7 +18,7 @@
     <div class="kontenedorea d-flex justify-content-center">
 
         <div class="bocadillo d-flex justify-content-center">
-            <h2 class="loginText align-self-center">prueba</h2>
+            <h2 class="loginText align-self-center">LOGIN</h2>
         </div>
 
         <img class="maskota" src="{{asset('multimedia/quimica.png')}}" alt="">
