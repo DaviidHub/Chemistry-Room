@@ -6,7 +6,8 @@ const vm = {
     },
     data() {
         return {
-            personas: []
+            personas: [],
+            mailBool: true
         }
     },
     methods: {
@@ -21,19 +22,21 @@ const vm = {
                     .then(data => {
                         data.forEach(databaseMail => {
                             if (databaseMail == inputMail) {
-                                mailBool = true
-                                Swal.fire({
-                                    icon: 'error',
-                                    title: 'Oops...',
-                                    text: 'Maila erregistratuta dago',
-                                    footer: '<a href="./web">Login</a>'
-                                })
+                                this.mailBool = false;
                             }
                         })
+                        if (!this.mailBool) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Maila registratuta dago',
+                                footer: '<a href="./web">Login</a>'
+                            })
+                            this.mailBool = true;
+                        } else{
+                            document.querySelector('#formRegister').submit();
+                        }
                     });
-                if (mailBool) {
-                    document.querySelector('#formRegister').submit();
-                }
             });
         }
     }

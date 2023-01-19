@@ -12,8 +12,12 @@ $light-gray: #EAEBED;
 @use 'layouts/_registro';
 @use 'layouts/_froga1';
 @use 'layouts/_froga2';
+@use 'layouts/_froga3';
+@use 'layouts/_froga4';
+@use 'layouts/_froga5';
+@use 'layouts/_froga6';
 @use 'layouts/_maskotaFroga';
-@use 'layouts/_admin';
+@use 'layouts/_transicionBocadillo';
 
 @font-face {
     font-family: roboto-regular;
@@ -23,6 +27,11 @@ $light-gray: #EAEBED;
 @font-face {
     font-family: roboto-thin;
     src: url(/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: roboto-light;
+    src: url(/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Light.ttf);
 }
 
 
@@ -38,7 +47,7 @@ input[type=submit],
 input[type=password]{
     background-color: $green;
     font-family: roboto-regular;
-    
+    color: $light-gray;
     &::placeholder {
         color: $light-gray;
     }
@@ -52,3 +61,4 @@ input[type=password]{
         transform: translateY(10px);
     }
 }
+

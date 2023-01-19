@@ -16,8 +16,8 @@ return new class extends Migration
         //
         Schema::create('Froga1', function (Blueprint $table) {
             $table->id();
-            $table->string('bideak', 75)->nullable();
-            $table->string('ezaugarriak', 75)->nullable();
+            $table->string('bideak', 300)->nullable();
+            $table->string('ezaugarriak', 300)->nullable();
             $table->unsignedBigInteger('id_pista')->nullable();
             $table->foreign('id_pista')->references('id')->on('Pistak');
             $table->timestamps();

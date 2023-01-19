@@ -1,7 +1,7 @@
 <?php
 // Aldagaiak
 $hostDB = '127.0.0.1';
-$nombreDB = 'chemistry room';
+$nombreDB = 'chemistryroom';
 $usuarioDB = 'root';
 $contrasenyaDB = '';
 // Datu basera konektatu
