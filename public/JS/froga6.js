@@ -7,8 +7,8 @@ const vmFroga6 = {
     data() {
         return {
             numeros6: [],
-            respuestaInput6: [],
-            izena6: []
+            izena6: [],
+            emaitza6: []
         }
     },
     methods: {
@@ -20,14 +20,13 @@ const vmFroga6 = {
                 .then(data => {
                     for (let i = 0; this.numeros6.length > i; i++) {
                         this.izena6.push(data[0][this.numeros6[i]]);
-                        this.respuestaInput6.push(data[0][this.numeros6[i]]);
                     }
                 });
         },
         numAleatoriosNoRepes(kant) {
             let i = 0;
             while (i < kant) {
-                let num = Math.round(Math.random() * (25 - 0) + 0);
+                let num = Math.round(Math.random() * (20 - 0) + 0);
                 if (!this.numeros6.includes(num)) {
                     this.numeros6.push(num);
                     i++;

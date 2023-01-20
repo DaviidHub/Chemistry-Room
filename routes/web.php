@@ -54,6 +54,10 @@ Route::get('/profila', function () {
     return view('web.profila', );
     })->name('web.profila');
 
+Route::get('/irabaziOrria', function () {
+    return view('web.irabaziOrria', );
+    })->name('web.irabaziOrria');
+
 Route::get('/adminKarpeta', [ErabiltzaileController::class, 'adminmode'])->name('adminKarpeta.admin');
 Route::get('/crear', [ErabiltzaileController::class, 'store'])->name('web.store');
 Route::post('/orriNagusi', [ErabiltzaileController::class, 'login'])->name('web.login');

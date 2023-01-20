@@ -80,7 +80,9 @@
                 <div class="text-center">
 
                     <div id="arriba" class="d-flex justify-content-center align-items-center">Solucion</div>
-                    <div id="abajo"></div>
+                    <div id="abajo">
+                        <h3>@{{emaitza6[0]}}</h3>
+                    </div>
 
                 </div>
 
