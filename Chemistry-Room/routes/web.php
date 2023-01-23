@@ -14,7 +14,7 @@ use App\Http\Controllers\ErabiltzaileController;
 |
 */
 
-Route::get('/web', function () {
+Route::get('/', function () {
 return view('web.login', );
 })->name('web.inicio');
 
