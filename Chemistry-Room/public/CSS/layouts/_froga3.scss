@@ -1,0 +1,54 @@
+$drop-shadow: 0px 4px 4px 0 rgba(0 0 0/ .3);
+$inner-shadow: inset 0px 4px 4px 0 rgba(0 0 0/ .5);
+$img-shadow: 0px -4px 4px rgba(0 0 0 / .5);
+$black: #191919;
+$dark-green:#21605D;
+$green:#339476;
+$light-gray: #EAEBED;
+
+#horca {
+    width: 300px;
+    height: 300px;
+    margin: 60px;
+}
+
+#ahorcado {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#letrasMal {
+    margin-top: 40px;
+    color: red;
+    font-size: 3em;
+}
+
+#palabra {
+    font-size: 2em;
+    height: 20px;
+    margin-left: 2vh;
+}
+
+.datosDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+.inputLetra {
+    background-color: $dark-green !important;
+    border: none;
+    width: 5% !important;
+    margin-left: 5%;
+    border-radius: 10px;
+    color: $light-gray;
+}
+
+#BidaliLetra{
+    background-color: transparent;
+    border: none;
+    width: 5%;
+}
+
+#bidaliArgazki{
+    width: 30% !important;
+}
