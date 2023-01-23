@@ -2,6 +2,7 @@
 import './bootstrap';
 import { createApp } from 'vue';
 
+
 // ======[Orokorra]======
 import Pista from './Components/pista.vue';
 createApp(Pista).mount('#maskota');
