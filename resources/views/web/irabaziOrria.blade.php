@@ -14,27 +14,41 @@
 
     @include('web\layouts\_menuJuegos')
 
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="./multimedia/FUEGOS-ARTIFICIALES.gif" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="./multimedia/FUEGOS-ARTIFICIALES.gif" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="./multimedia/FUEGOS-ARTIFICIALES.gif" alt="Third slide">
-          </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="http://i1.adis.ws/i/canon/get-inspired-capturing-motion-1-16.9_048918d2726e4d0db01694845a661007"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2020/12/31/16094161692840.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2020/12/31/16094161692840.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
 
     <div id="maskota">
         <div class="d-flex flex-column bottom-0 end-0 justify-content-end align-items-center">
