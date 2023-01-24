@@ -415,6 +415,26 @@ h3 {
   height: 5em;
 }
 
+#carouselExampleIndicators {
+  margin: 80px;
+  margin-bottom: 300px;
+}
+
+.carousel-inner img {
+  height: 500px;
+}
+
+.maskotaIrabazi {
+  position: absolute;
+  top: 5;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: 550px;
+  height: 600px;
+  width: 600px;
+}
+
 #centrar {
   margin-top: 13%;
   margin-left: 10%;

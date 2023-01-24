@@ -25,15 +25,15 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="http://i1.adis.ws/i/canon/get-inspired-capturing-motion-1-16.9_048918d2726e4d0db01694845a661007"
+                <img src="./multimedia/Fondo1.png"
                     class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2020/12/31/16094161692840.jpg"
+                <img src="./multimedia/fondo2.png"
                     class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2020/12/31/16094161692840.jpg"
+                <img src="./multimedia/Fondo3.png"
                     class="d-block w-100" alt="...">
             </div>
         </div>
@@ -50,14 +50,23 @@
     </div>
 
 
-    <div id="maskota">
-        <div class="d-flex flex-column bottom-0 end-0 justify-content-end align-items-center">
-            <div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+
+<div id="maskota">
+    <div class="maskotaIrabazi">
+        <div v-if="show">
+            <div class=" p-4 bocadilloPista d-flex justify-content-center">
+                <h2 class="pistaText p-3 text-justify">Zorionak {{session()->get('erab')->izena}}! Escape room-etik atera egin zara</h2>
             </div>
-            <img id="maskotaJuego" src="{{asset("multimedia/quimica.png")}}" alt="">
         </div>
+        <img id="maskotaJuego" src="{{asset("multimedia/quimica.png")}}" alt="">
     </div>
+</div>
+
+
 </body>
 
 </html>
