@@ -50,8 +50,19 @@ $img-shadow: 0 -4px 4px rgba(0 0 0 / .5);
 }
 
 // TAULAREN "X"-A
-#btn-admin{
-    
+#button-confirm{
+    width: 150px !important;
+    margin: 0 !important;
+    font-size: medium;
+    outline: none;
+    border: none;
+    transition: .3s;
+
+    &:hover{
+        background-color: $dark-green !important;
+        border-radius: 12px !important;
+        transition: .7s;
+    }
 }
 
 .ekis{
