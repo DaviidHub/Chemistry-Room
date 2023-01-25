@@ -131,7 +131,10 @@ export default {
                             icon: 'error',
                             title: 'Oops...',
                             text: 'saiakera guztiak gastatu dituzu',
-                            footer: '<a href="./froga1">Saiatu Berriro</a> '
+                            footer: '<a href="./froga1">Saiatu Berriro</a> ',
+                            background: '#21605D',
+                            color: 'white',
+                            confirmButtonColor: "#339476",
                         }).then(result => {
                             if (result.isConfirmed) {
                                 window.location.href = './orriNagusi';

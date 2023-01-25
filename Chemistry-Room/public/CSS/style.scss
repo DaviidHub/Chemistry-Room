@@ -16,22 +16,23 @@ $light-gray: #EAEBED;
 @use 'layouts/_froga4';
 @use 'layouts/_froga5';
 @use 'layouts/_froga6';
+@use 'layouts/_admin';
 @use 'layouts/_maskotaFroga';
 @use 'layouts/_transicionBocadillo';
 
 @font-face {
     font-family: roboto-regular;
-    src: url(/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Regular.ttf);
+    src: url(/Laravel/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Regular.ttf);
 }
 
 @font-face {
     font-family: roboto-thin;
-    src: url(/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Thin.ttf);
+    src: url(/Laravel/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Thin.ttf);
 }
 
 @font-face {
     font-family: roboto-light;
-    src: url(/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Light.ttf);
+    src: url(/Laravel/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Light.ttf);
 }
 
 

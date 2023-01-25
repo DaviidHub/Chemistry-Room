@@ -1,3 +1,8 @@
+*::-moz-selection {
+  color: #EAEBED;
+  background-color: #191919;
+}
+
 *::selection {
   color: #EAEBED;
   background-color: #191919;
@@ -24,8 +29,6 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
 }
 
@@ -42,11 +45,11 @@
   top: 0;
   width: 100px;
   height: 90px;
-  -webkit-filter: invert(100%);
   filter: invert(100%) drop-shadow(0 -4px 4px rgba(0, 0, 0, 0.5));
 }
 .atom img:hover {
-  animation: upDownAtom alternate infinite 2s ease-in-out;
+  -webkit-animation: upDownAtom alternate infinite 2s ease-in-out;
+          animation: upDownAtom alternate infinite 2s ease-in-out;
 }
 
 .profile span {
@@ -58,7 +61,21 @@
 }
 
 .dropdown-item {
+  height: -webkit-min-content;
+  height: -moz-min-content;
   height: min-content;
+}
+
+@-webkit-keyframes upDownAtom {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(2px);
+  }
 }
 
 @keyframes upDownAtom {
@@ -90,7 +107,8 @@
   background-color: #EAEBED;
   box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.3);
   border-radius: 2em 2em 2em 0;
-  animation: upDownBocadillo alternate infinite 2.5s linear;
+  -webkit-animation: upDownBocadillo alternate infinite 2.5s linear;
+          animation: upDownBocadillo alternate infinite 2.5s linear;
 }
 .bocadilloON h2 {
   color: #339476;
@@ -154,7 +172,8 @@ input {
   background-color: #EAEBED;
   box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.3);
   border-radius: 2em 2em 2em 0;
-  animation: upDownBocadillo alternate infinite 3s ease-in;
+  -webkit-animation: upDownBocadillo alternate infinite 3s ease-in;
+          animation: upDownBocadillo alternate infinite 3s ease-in;
 }
 .bocadillo .loginText {
   color: #339476;
@@ -181,6 +200,15 @@ input {
   height: 300px;
 }
 
+@-webkit-keyframes upDownBocadillo {
+  from {
+    transform: translateY(-8px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
 @keyframes upDownBocadillo {
   from {
     transform: translateY(-8px);
@@ -200,7 +228,8 @@ input {
   background-color: #EAEBED;
   box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.3);
   border-radius: 2em 2em 0em 2em;
-  animation: upDownBocadillo alternate infinite 3s ease-in;
+  -webkit-animation: upDownBocadillo alternate infinite 3s ease-in;
+          animation: upDownBocadillo alternate infinite 3s ease-in;
 }
 .bocadilloR .registroText {
   color: #339476;
@@ -243,7 +272,7 @@ input {
 
 .divIzena {
   width: 30%;
-  height: 12vh;
+  height: 17vh;
   background-color: #21605D;
   border-radius: 1em;
   margin-top: 4%;
@@ -331,6 +360,7 @@ input {
 }
 
 [placeholder]:focus::-webkit-input-placeholder {
+  -webkit-transition: text-indent 0.4s 0.4s ease;
   transition: text-indent 0.4s 0.4s ease;
   text-indent: -100%;
   opacity: 1;
@@ -415,6 +445,52 @@ h3 {
   height: 5em;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#body-admin {
+  background-color: #339476;
+  margin: auto;
+  font-family: roboto;
+}
+
+#tabla-admin {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tabla-admin, td, th {
+  border: 2px solid #21605D;
+}
+
+#tabla-admin, td > .sin {
+  border: 2px solid #339476;
+}
+
+.titulos {
+  text-align: center;
+  color: #21605D;
+  font-size: 150%;
+}
+
+.datos {
+  color: #EAEBED;
+  text-align: center;
+}
+
+.ekis {
+  background-color: transparent;
+  display: inline-block !important;
+  border: 0;
+  margin: inherit !important;
+  color: red !important;
+  font-weight: bold !important;
+  font-size: 150% !important;
+  box-shadow: none !important;
+}
+
 #maskotaJuego {
   width: 42%;
 }
@@ -436,7 +512,8 @@ h3 {
   background-color: #EAEBED;
   box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.3);
   border-radius: 0em 0em 0em 0;
-  animation: upDownBocadillo alternate infinite 3s ease-in;
+  -webkit-animation: upDownBocadillo alternate infinite 3s ease-in;
+          animation: upDownBocadillo alternate infinite 3s ease-in;
 }
 .bocadilloPista:before {
   border: 25px solid #EAEBED;
@@ -476,15 +553,15 @@ h3 {
 
 @font-face {
   font-family: roboto-regular;
-  src: url(/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Regular.ttf);
+  src: url(/Laravel/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Regular.ttf);
 }
 @font-face {
   font-family: roboto-thin;
-  src: url(/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Thin.ttf);
+  src: url(/Laravel/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Thin.ttf);
 }
 @font-face {
   font-family: roboto-light;
-  src: url(/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Light.ttf);
+  src: url(/Laravel/Chemistry-Room/public/multimedia/fuentes/Roboto/Roboto-Light.ttf);
 }
 * {
   margin: 0;
@@ -497,6 +574,12 @@ input[type=submit],
 input[type=password] {
   background-color: #339476;
   font-family: roboto-regular;
+  color: #EAEBED;
+}
+body::-moz-placeholder, input[type=text]::-moz-placeholder, input[type=submit]::-moz-placeholder, input[type=password]::-moz-placeholder {
+  color: #EAEBED;
+}
+body:-ms-input-placeholder, input[type=text]:-ms-input-placeholder, input[type=submit]:-ms-input-placeholder, input[type=password]:-ms-input-placeholder {
   color: #EAEBED;
 }
 body::placeholder,
@@ -513,6 +596,4 @@ input[type=password]::placeholder {
   to {
     transform: translateY(10px);
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

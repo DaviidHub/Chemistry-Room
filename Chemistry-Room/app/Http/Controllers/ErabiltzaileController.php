@@ -139,6 +139,8 @@ class ErabiltzaileController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = Erabiltzaileak::findOrFail($id);
+        $user->delete();
+        return redirect()->route('adminKarpeta.admin')->with('success', 'Erabiltzailea ezabatuta');
     }
 }

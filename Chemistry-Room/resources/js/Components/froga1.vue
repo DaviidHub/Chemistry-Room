@@ -1,17 +1,13 @@
 <template>
-  <article :id="unicos1[index]" v-for="(izena, index) in izena1" class="col-4 divIzena drop" @drop="drop" @dragover="allowDrop">
+  <article :id="unicos1[index]" v-for="(izena, index) in izena1" class="col-4 mb-3 divIzena drop" @drop="drop" @dragover="allowDrop">
     <p>{{izena}}</p>
   </article>
 
-  <article id="divDesk" class="d-flex flex-row mt-4">
-
-    <section v-for="(desk, index) in desk1" class="herenak d-flex flex-column">
+    <section v-for="(desk, index) in desk1">
       <p :id="unicos1[index]" @dragstart="drag" class="drag1" draggable="true">{{desk}}</p>
     </section>
 
-  </article>
 </template>
-
 <script>
 
 export default {
@@ -70,6 +66,9 @@ export default {
         e.preventDefault();
         e.target.appendChild(this.div);
         this.p = e.target;
+        if (this.p.textContent === undefined){
+          this.p.style.backgroundColor = this.koloreDefault;
+        }
         this.solucion();
       },
       allowDrop(e) {
@@ -77,13 +76,12 @@ export default {
       },
       // Comprueba que el parrafo que mueves va con el div
       solucion(){
-        if(this.div.id == this.p.id){
-          // Correcto
+        if(this.div.id == this.p.id){ // Correcto
           this.p.style.backgroundColor = this.koloreDefault;
           this.correctos != 5 ? this.correctos++ : window.location.href = './froga2';
-        } else {
-          // Incorrecto
+        } else { // Incorrecto
           this.p.style.backgroundColor = this.koloreTxarto;
+          LIFES.removeLife;
         }
       }
   }

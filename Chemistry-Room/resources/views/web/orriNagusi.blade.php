@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orri nagusia</title>
+    <link rel="icon" type="image/png" href="../../../public/multimedia/life.png">
     <link rel="stylesheet" href="{{asset("CSS/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("CSS/style.css")}}">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
@@ -15,7 +16,7 @@
 
 
 <body class="overflow-hidden">
-
+    
     @include('web\layouts\_menu');
 
     

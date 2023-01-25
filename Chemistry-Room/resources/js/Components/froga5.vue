@@ -50,7 +50,7 @@
                 this.pista = (data[2][0]);
               });
         },
-        // Numero aleatorio entre el 0 y 25 y lo guarda en numeros
+        // Numero aleatorio entre el 1 y 197 (que se lo pasamos como parametro) y lo guarda en numeros
         numAleatoriosNoRepes(kant, max, min) {
           let i = 0;
           while (i < kant) {
@@ -76,12 +76,10 @@
         e.preventDefault();
       },
       solucion(){
-        if(this.div.id == this.p.id){
-          // Correcto
+        if(this.div.id == this.p.id){ // Correcto
           this.p.style.color = this.koloreDefault;
           this.correctos != 20 ? this.correctos++ : window.location.href = './froga6';
-        } else {
-          // Incorrecto
+        } else { // Incorrecto
           this.p.style.color = this.koloreTxarto;
         }
       }

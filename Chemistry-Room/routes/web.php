@@ -14,7 +14,7 @@ use App\Http\Controllers\ErabiltzaileController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/web', function () {
 return view('web.login', );
 })->name('web.inicio');
 
@@ -58,9 +58,9 @@ Route::get('/adminKarpeta', [ErabiltzaileController::class, 'adminmode'])->name(
 Route::get('/crear', [ErabiltzaileController::class, 'store'])->name('web.store');
 Route::post('/orriNagusi', [ErabiltzaileController::class, 'login'])->name('web.login');
 Route::get('/logout', [ErabiltzaileController::class, 'logout'])->name('web.logout');
+Route::delete('/Erabiltzaileak/{id}', [ErabiltzaileController::class, 'destroy'])->name('Erabiltzaileak.destroy');
 
 // Middleware
-
 Route::group(['Middleware' => 'middlewareSesion'], function(){
     Route::get('/infoErab', function () {
         return view('web.infoErab');

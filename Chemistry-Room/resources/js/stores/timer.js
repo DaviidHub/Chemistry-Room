@@ -2,9 +2,8 @@ import { defineStore } from 'pinia'
 
 export const useCounterStore = defineStore('counter', {
   state: () => ({ 
-    min: 9,
-    sec: 59,
-    temporizador: ''
+    min: 59,
+    sec: 59
   }),
   getters:{
 
@@ -25,12 +24,13 @@ export const useCounterStore = defineStore('counter', {
                     Swal.fire({
                       icon: 'info',
                       title: 'Denbora amaituta',
-                      text: 'Saiatu berriro :)'
+                      text: 'Saiatu berriro :)',
+                      background: '#21605D',
+                      color: 'white',
+                      confirmButtonColor: "#339476",
                     })
                     .then(value => {
-                      if (value.isConfirmed) {
                         location.href = './orriNagusi';
-                      }
                     });
                   }
                 } else {

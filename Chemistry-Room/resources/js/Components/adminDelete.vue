@@ -1,14 +1,10 @@
 <template>
-
-
+    <td class="border-0 sin">
+        <input @click="submit()" type="submit" value="X" class="ekis">
+    </td>
 </template>
 
 <script>
-    import {
-        shallowReadonly
-    } from 'vue';
-
-
     export default {
         data() {
             return {

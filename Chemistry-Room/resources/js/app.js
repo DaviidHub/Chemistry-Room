@@ -1,13 +1,21 @@
 // ======[VUE]======
 import './bootstrap';
 import { createApp } from 'vue';
+import { createPinia } from 'pinia'
 
 // ======[Orokorra]======
 import Pista from './Components/pista.vue';
 createApp(Pista).mount('#maskota');
 
 import Timer from './Components/timer.vue';
-createApp(Timer).mount('#tiempo');
+const timer = createApp(Timer);
+timer.use(createPinia());
+timer.mount('#tiempo');
+
+import Lifes from './Components/lifes.vue';
+const lifes = createApp(Lifes);
+lifes.use(createPinia());
+lifes.mount('#vidas');
 
 // ======[Froga 1]======
 import Froga1 from './Components/froga1.vue';
@@ -32,6 +40,10 @@ createApp(Froga5).mount('#froga5');
 // ======[Froga 6]======
 // import Froga6 from './Components/froga6.vue';
 // createApp(Froga6).mount('#Datos6');
+
+// ======[Admin]======
+import Admin from './Components/adminDelete.vue';
+createApp(Admin).mount('#btn-admin');
 
 
 
