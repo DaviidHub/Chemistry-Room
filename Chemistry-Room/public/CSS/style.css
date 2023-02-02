@@ -109,6 +109,28 @@
   display: none;
 }
 
+#centrar {
+  margin-top: 13%;
+  margin-left: 10%;
+}
+
+.input, #bidali {
+  width: 20%;
+  background-color: #21605D !important;
+  border-radius: 1em;
+  margin: 20px;
+  border-color: #21605D;
+  border: none !important;
+  color: #EAEBED !important;
+}
+.input#bidali, #bidali#bidali {
+  width: 15%;
+  margin-left: 40%;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+}
+
 /*LOGIN*/
 input {
   padding: 1%;
@@ -119,7 +141,7 @@ input[type=submit] {
   display: flex;
   align-self: flex-end;
   margin-top: 1em;
-  color: #21605D;
+  color: #21605d !important;
   font-size: large;
   font-weight: bold;
 }
@@ -148,10 +170,10 @@ input {
   position: absolute;
   top: 10vh;
   margin-left: 14% !important;
-  background-color: #EAEBED;
+  background-color: #eaebed;
   height: 140px;
   width: 350px;
-  background-color: #EAEBED;
+  background-color: #eaebed;
   box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.3);
   border-radius: 2em 2em 2em 0;
   animation: upDownBocadillo alternate infinite 3s ease-in;
@@ -176,7 +198,7 @@ input {
 }
 
 .divLogin {
-  background-color: #21605D;
+  background-color: #21605d;
   border-radius: 0 1.5em 1.5em 0;
   height: 300px;
 }
@@ -243,29 +265,86 @@ input {
 
 .divIzena {
   width: 30%;
-  height: 12vh;
+  height: 17vh;
   background-color: #21605D;
   border-radius: 1em;
   margin-top: 4%;
   margin-left: 3%;
 }
 
-.herenak {
-  width: 40%;
-  padding: 1em;
+/* FROGA2 */
+:root {
+  /* CARTAS A LO ANCHO */
+  --w: calc(50vw / 3);
+  /* CARTAS A LO ALTO */
+  --H: calc(50vw / 4 );
 }
 
-.divRespuesta {
-  width: 30%;
-  height: 100px;
+#cuerpo {
+  /* padding: 0;
+    margin: 0; */
+  -webkit-perspective: 1000;
+  background-color: #339476;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.area-tarjeta, .tarjeta, .cara {
+  cursor: pointer;
+  width: var(--w);
+  min-width: 120px;
+  min-height: 120px;
+  height: var(--h);
+  border-radius: 20px;
+}
+
+.tarjeta {
+  position: relative;
+  transform-style: preserve-3d;
+  /* LLAMADA AL KEYFRAME */
+  animation: iniciar 2s;
+}
+
+.cara {
+  position: absolute;
+  backface-visibility: hidden;
+  box-shadow: inset 0 0 0 2px white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trasera {
   background-color: #21605D;
-  border-radius: 1em;
-  margin-top: 4%;
-  margin-left: 3%;
+  transform: rotateY(180deg);
 }
 
-.logoCarta {
-  width: 30%;
+.superior {
+  background-color: #21605D;
+}
+
+.nuevojuego {
+  cursor: pointer;
+  background: linear-gradient(orange, darkorange);
+  padding: 20px;
+  border-radius: 50px;
+  border: white solid 5px;
+}
+
+@keyframes iniciar {
+  20%, 90% {
+    transform: rotateY(180deg);
+  }
+  0%, 100% {
+    transform: rotateY(0deg);
+  }
+}
+.imagenes {
+  width: 100px !important;
 }
 
 #horca {
@@ -381,13 +460,24 @@ input {
 
 table {
   border-collapse: separate;
-  border-spacing: 6em 3em;
+  border-spacing: 4em 3em;
+  width: 90%;
 }
 
 h3 {
   font-family: roboto-thin;
+  font-size: 1.35em;
+  font-weight: bold;
+  width: 20vh;
+}
+
+#emaitzaFinal {
+  font-family: roboto-thin;
   font-size: 2em;
   font-weight: bold;
+  background-color: #21605D;
+  height: 2em;
+  width: 10em;
 }
 
 .nombreQuimico {
@@ -410,9 +500,75 @@ h3 {
   font-family: roboto-light;
 }
 
-#abajo {
-  background-color: #21605D;
-  height: 5em;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#body-admin {
+  background-color: #339476;
+  margin: auto;
+  font-family: roboto;
+}
+
+#tabla-admin {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tabla-admin, .td-admin, .th-admin {
+  border: 2px solid #21605D;
+}
+
+#tabla-admin, td > .sin {
+  border: 2px solid #339476;
+}
+
+.titulos {
+  text-align: center;
+  color: #21605D;
+  font-size: 150%;
+}
+
+.datos {
+  color: #EAEBED;
+  text-align: center;
+}
+
+.ekis {
+  background-color: transparent;
+  display: inline-block !important;
+  border: 0;
+  margin: inherit !important;
+  color: red !important;
+  font-weight: bold !important;
+  font-size: 150% !important;
+  box-shadow: none !important;
+}
+
+#argazkiBotoi {
+  width: 23%;
+  background-color: #21605D !important;
+  border-radius: 1em;
+  margin: 25px;
+  border-color: #21605D;
+  color: #EAEBED !important;
+  display: flex;
+  justify-content: center;
+  border: none !important;
+  margin-left: 10% !important;
+  margin-top: 5%;
+}
+
+.argazkiForm {
+  border-radius: 10px;
+  border: 0;
+  margin-top: 2em;
+  outline: none;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+.argazkiForm#inputArgazki {
+  width: 40%;
 }
 
 #maskotaJuego {
@@ -453,6 +609,100 @@ h3 {
   color: #339476;
   font-family: roboto-regular;
   font-size: 1rem;
+}
+
+.lolaKodea {
+  width: 25%;
+  margin-top: 17vh !important;
+}
+
+.bocadilloKode {
+  position: absolute;
+  top: 20vh;
+  left: 52vh;
+  height: 200px;
+  width: 300px;
+  background-color: #eaebed;
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 2em 2em 2em 0;
+  animation: upDownBocadillo alternate infinite 2.5s linear;
+}
+.bocadilloKode h2 {
+  color: #339476;
+  font-family: roboto-thin;
+}
+.bocadilloKode p {
+  color: #339476;
+  font-size: medium;
+}
+
+input[type=number] {
+  top: 10vh;
+  border-radius: 10px !important;
+  border: 0 !important;
+  height: 3em !important;
+  color: #eaebed;
+  margin-top: 2em !important;
+  background-color: #339476;
+  -moz-appearance: textfield;
+  outline: none !important;
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.3) !important;
+}
+input[type=number]::placeholder {
+  color: #eaebed;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+aside {
+  margin-left: 50vh;
+  background-color: #21605d;
+  padding: 1%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+#kodeBidali {
+  width: 35%;
+  display: flex;
+  border: 0;
+  border-radius: 10px;
+  justify-content: center !important;
+  align-self: flex-end;
+  margin-top: 2em;
+  color: #21605d;
+  font-size: large;
+  font-weight: bold;
+}
+#kodeBidali:focus {
+  outline: 0;
+  border: 0;
+}
+
+#carouselExampleIndicators {
+  margin: 80px;
+  margin-bottom: 300px;
+}
+
+.carousel-inner img {
+  height: 500px;
+}
+
+.maskotaIrabazi {
+  position: absolute;
+  top: 5;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: 550px;
+  height: 600px;
+  width: 600px;
 }
 
 /* Transition */
@@ -504,6 +754,11 @@ input[type=text]::placeholder,
 input[type=submit]::placeholder,
 input[type=password]::placeholder {
   color: #EAEBED;
+}
+
+.error-message {
+  font-size: 80%;
+  color: red;
 }
 
 @keyframes upDownBocadillo {

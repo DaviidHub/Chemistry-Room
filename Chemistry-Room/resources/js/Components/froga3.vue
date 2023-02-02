@@ -1,21 +1,33 @@
 <template>
-  <div id="ahorcado">
-    <img id="horca" :src="foto" alt="image" />
-    <span id="letrasMal" v-for="letra in nodoError">{{letra}}</span>
-  </div>
-  <div class="datosDiv">
-    <span id="palabra" v-for="guion in solucion">{{guion}}</span>
-    <input v-model="nodoLetra" type="text" class="inputLetra">
-    <button id="BidaliLetra" @click="comprobarLetra"> <img id="bidaliArgazki" src="../../../public/multimedia/tick.png" alt=""></button>
-  </div>
+    <div id="ahorcado">
+        <img id="horca" :src="foto" alt="image" />
+        <span id="letrasMal" v-for="letra in nodoError">{{ letra }}</span>
+    </div>
+    <div class="datosDiv">
+        <span id="palabra" v-for="guion in solucion">{{ guion }}</span>
+        <input v-model="nodoLetra" type="text" class="inputLetra" />
+        <button id="BidaliLetra" @click="comprobarLetra">
+            <img
+                id="bidaliArgazki"
+                src="../../../public/multimedia/tick.png"
+                alt=""
+            />
+        </button>
+    </div>
 </template>
 
 <script>
+
 export default {
     mounted() {
         this.cargarDatos();
         this.numAleatoriosNoRepes(1);
         this.ahorcadoFoto();
+        this.vidasPerdidas.splice(
+                  this.vidasPerdidas.lastIndexOf(true),
+                  1,
+                  false
+              );
     },
     data() {
         return {
@@ -25,10 +37,13 @@ export default {
             guiones1: [],
             guiones2: [],
             solucion: [],
-            nodoLetra: '',
             nodoError: [],
+            nodoLetra: '',
+            foto: '',
             num: 1,
-            foto: ''
+            vidasPerdidas: (localStorage.getItem("lifes") === null)
+                ? [true, true, true, true]
+                : JSON.parse(localStorage.getItem("lifes")),
         }
     },
     methods: {
@@ -42,15 +57,15 @@ export default {
                     let hitza = (data[this.numeros3[0]].toLowerCase().split(' '));
                     // Metemos la posicion 0 en hitza1
                     let hitz1 = (hitza[0]);
-                    // Metemos la posicion 0 en hitza1
+                    // Metemos la posicion 0 en hitza2
                     let hitz2 = (hitza[1]);
 
-                    // Hacemos que cada string se divida por caracter y se meta en el array 
+                    // Hacemos que cada string se divida por caracter y se meta en el array
                     this.palabra1 = hitz1.split('');
                     this.palabra2 = hitz2.split('');
 
                     // Hacemos que por cada longitud de cada palabra nos cree en el array guiones[x]
-                    // this.guiones1.push(this.crearGuiones(this.palabra1)) 
+                    // this.guiones1.push(this.crearGuiones(this.palabra1))
                     this.crearGuiones(this.palabra1, this.guiones1);
                     this.crearGuiones(this.palabra2, this.guiones2);
 
@@ -63,6 +78,11 @@ export default {
 
                 });
         },
+        /**
+         * 
+         * @param {Int} kant 
+         * @param {Array} array 
+         */
         crearGuiones(kant, array) {
             // let barras = [];
             kant.forEach(letra => {
@@ -75,6 +95,11 @@ export default {
             });
             // return barras;
         },
+        /**
+         * 
+         * @param {Int} kant
+         * 
+         */
         numAleatoriosNoRepes(kant) {
             let i = 0;
             while (i < kant) {
@@ -112,12 +137,21 @@ export default {
 
 
                 for (let pos in posicion) {
-                    console.log("Inidice: " + pos);
                     this.solucion.splice(posicion[pos], 1, this.nodoLetra)
                 }
 
                 if (!this.solucion.includes('_')) {
-                    window.location.href = './froga4'
+                    Swal.fire({
+                        icon: "success",
+                        title: "Zorionak",
+                        text: "Irabazi duzu jokoa. Gogoratu zenbakia: " + localStorage.getItem("codRand")[2],
+                        background: "#21605D",
+                        color: "white",
+                        confirmButtonColor: "#339476",
+                    }).then((value) => {
+                        this.gorde();
+                        window.location.href = "./froga4";
+                    });
                 }
 
                 if (posicion.length == 0) {
@@ -131,7 +165,10 @@ export default {
                             icon: 'error',
                             title: 'Oops...',
                             text: 'saiakera guztiak gastatu dituzu',
-                            footer: '<a href="./froga1">Saiatu Berriro</a> '
+                            footer: '<a href="./froga1">Saiatu Berriro</a> ',
+                            background: '#21605D',
+                            color: 'white',
+                            confirmButtonColor: "#339476",
                         }).then(result => {
                             if (result.isConfirmed) {
                                 window.location.href = './orriNagusi';
@@ -149,7 +186,14 @@ export default {
             // Cambia de foto de ahorcado
             this.foto = './multimedia/Ahorcado/ahorcado_' + this.num + '.png';
             this.num++;
-        }
+        },
+        gorde() {
+            localStorage.clear();
+            let minuto = document.getElementById("min").innerHTML;
+            let segundo = document.getElementById("sec").innerHTML;
+            localStorage.setItem("min", minuto);
+            localStorage.setItem("sec", segundo);
+        },
     },
     computed: {
 

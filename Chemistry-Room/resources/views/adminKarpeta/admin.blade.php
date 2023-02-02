@@ -1,55 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>Colegio</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <head>
+        <title>Admin</title>
+@include('../web/layouts/_includes')
 </head>
 
-<style>
-    body {
-        margin: auto;
-        padding: 50px;
-    }
 
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
+<body id="body-admin">
 
-    table,
-    td,
-    th {
-        border: 1px solid black;
-    }
+    @include('../web/layouts/_menu')
 
-</style>
+    <main class="container">
+        <table id="tabla-admin" class="my-5">
+            <tr class="titulos">
+                <th class="th-admin">Izena</th>
+                <th class="th-admin">Abizena</th>
+                <th class="th-admin">Mail</th>
+                <th class="th-admin">Rol</th>
+            </tr>
+            @foreach($erab as $usuario)
+            <tr class="datos">
+                <form  action="{{ route('Erabiltzaileak.destroy', $usuario->id) }}" method="post" >
+                    @method('DELETE')
+                    @csrf
+                    <td class="td-admin">{{ $usuario->izena }}</td>
+                    <td class="td-admin">{{ $usuario->abizenak }}</td>
+                    <td class="td-admin">{{ $usuario->mail }}</td>
+                    <td class="td-admin">{{ $usuario->rol }}</td>
+                    
+                    <!-- ERABILTZAILEA EZABATU BOTOIA -->
+                    <td class="border-0 sin td-admin"><input type="submit" value="X" class="ekis"></td>
+                </form>
+            </tr>
+            @endforeach
+        </table>
 
-<body>
-    <h2>Listado de Alumnos</h2>
-    @if ($message = Session::get('success'))
-    <div class="alert alert-success">
-        <p>{{ $message }}</p>
-    </div>
-    @endif
-    <table>
-        <tr>
-            <th>Izena</th>
-            <th>Abizena</th>
-            <th>Mail</th>
-            <th>Rol</th>
-        </tr>
-        @foreach($erab as $usuario)
-        <tr>
-            <td>{{ $usuario->izena }}</td>
-            <td>{{ $usuario->abizenak }}</td>
-            <td>{{ $usuario->mail }}</td>
-            <td>{{ $usuario->rol }}</td>
-        </tr>
-        @endforeach
-    </table>
+        <form action="{{ route('web.storeFotos') }}" method="POST" enctype="multipart/form-data" 
+        class="formLogi d-flex align-items-center" autocomplete="off">
+        @csrf    
+            
+            <input type="text" class="argazkiForm mx-5" name="izena" placeholder="Argazki izena" value="{{ old('izena') }}">
+        
+            <input id="inputArgazki" type="file" name="argazki" class="argazkiForm" placeholder="argazki" value="{{ old('argazki') }}">
+    
+            <input id="argazkiBotoi" type="submit" value="BIDALI">
+        </form>
 
-
+    </main>
 </body>
 
 </html>

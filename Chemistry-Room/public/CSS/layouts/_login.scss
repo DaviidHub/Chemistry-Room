@@ -1,23 +1,22 @@
-
-$drop-shadow: 0px 4px 4px 0 rgba(0 0 0/ .3);
-$inner-shadow: inset 0px 4px 4px 0 rgba(0 0 0/ .5);
-$img-shadow: 0px -4px 4px  rgba(0 0 0 / .5);
+$drop-shadow: 0px 4px 4px 0 rgba(0 0 0/ 0.3);
+$inner-shadow: inset 0px 4px 4px 0 rgba(0 0 0/ 0.5);
+$img-shadow: 0px -4px 4px rgba(0 0 0 / 0.5);
 $black: #191919;
-$dark-green:#21605D;
-$green:#339476;
-$light-gray: #EAEBED;
+$dark-green: #21605d;
+$green: #339476;
+$light-gray: #eaebed;
 
 /*LOGIN*/
 input {
     padding: 1%;
 }
 
-input[type=submit] {
+input[type="submit"] {
     width: 35%;
     display: flex;
     align-self: flex-end;
     margin-top: 1em;
-    color: $dark-green;
+    color: $dark-green !important;
     font-size: large;
     font-weight: bold;
     &:focus {
@@ -26,8 +25,8 @@ input[type=submit] {
     }
 }
 
-input{
-    outline: none;  
+input {
+    outline: none;
     box-shadow: $drop-shadow;
 }
 
@@ -59,7 +58,7 @@ input{
     }
 }
 
-.aRegister{
+.aRegister {
     text-decoration: none;
     color: $green;
 }
@@ -79,11 +78,13 @@ input{
     height: 300px;
 }
 
+
+
 @keyframes upDownBocadillo {
-    from{
+    from {
         transform: translateY(-8px);
     }
-    to{
+    to {
         transform: translateY(10px);
     }
 }

@@ -8,80 +8,41 @@
     <title>FROGA 2</title>
     <link rel="stylesheet" href="{{asset("CSS/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("CSS/style.css")}}">
-    @vite(['resources/js/app.js','resources/css/app.css'])
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
 </head>
 
 <body class="overflow-hidden">
 
-    @include('web\layouts\_menuJuegos')
+    @include('web.layouts._menuJuegos') 
 
 
-    <div class="container">
+    <div id="container">
 
 
-        <div class="row text-center position-absolute right-0 espacio">
+        <div class="row text-center position-absolute right-0 espacio" id="cuerpo">
 
-            <div class="col-4 divRespuesta">
-                <img class="logoCarta" src="{{asset("multimedia/logoCarta.png")}}" alt="">
-            </div>
-
-            <div class="col-4 divRespuesta">
-                <img class="logoCarta" src="{{asset("multimedia/logoCarta.png")}}" alt="">
-            </div>
-
-            <div class="col-4 divRespuesta">
-                <img class="logoCarta" src="{{asset("multimedia/logoCarta.png")}}" alt="">
-            </div>
-
-            <div class="col-4 divRespuesta">
-                <img class="logoCarta" src="{{asset("multimedia/logoCarta.png")}}" alt="">
-            </div>
-
-            <div class="col-4 divRespuesta">
-                <img class="logoCarta" src="{{asset("multimedia/logoCarta.png")}}" alt="">
-            </div>
-
-            <div class="col-4 divRespuesta">
-                <img class="logoCarta" src="{{asset("multimedia/logoCarta.png")}}" alt="">
-            </div>
-
-            
-            <div class="col-4 divRespuesta">
-                <img class="logoCarta" src="{{asset("multimedia/logoCarta.png")}}" alt="">
-            </div>
-
-            <div class="col-4 divRespuesta">
-                <img class="logoCarta" src="{{asset("multimedia/logoCarta.png")}}" alt="">
-            </div>
-
-            <div class="col-4 divRespuesta">
-                <img class="logoCarta" src="{{asset("multimedia/logoCarta.png")}}" alt="">
-            </div>
-
-            <div class="col-4 divRespuesta">
-                <img class="logoCarta" src="{{asset("multimedia/logoCarta.png")}}" alt="">
-            </div>
-
-            <div class="col-4 divRespuesta">
-                <img class="logoCarta" src="{{asset("multimedia/logoCarta.png")}}" alt="">
-            </div>
-
-            <div class="col-4 divRespuesta">
-                <img class="logoCarta" src="{{asset("multimedia/logoCarta.png")}}" alt="">
+            <div id="Datos2">
+                <tablero></tablero>
             </div>
 
         </div>
 
     </div>
+    
+    {{-- <section id="maskota"></section> --}}
 
-    @include('web\layouts\_maskotaFroga');
+    {{-- VUE pista  --}}
+    <section id="maskota"></section>
 
-        {{-- Swal --}}
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        {{-- Vue 3 --}}
-        <script src="https://unpkg.com/vue@next"></script>
-        {{-- JS  --}}
-        <script src="{{asset("JS/app.js")}}"></script>
+
+    {{-- Swal --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
+<!-- CSS-an jartzen baldin badugu, beste orrialdeetan arazoak ematen dituelako hemen jartzen dugu -->
+    <style>
+        div{
+      display: inline-block;
+    }
+    </style>
 </html>

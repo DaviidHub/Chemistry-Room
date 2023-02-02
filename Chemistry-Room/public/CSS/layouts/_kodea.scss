@@ -1,0 +1,85 @@
+$drop-shadow: 0px 4px 4px 0 rgba(0 0 0/ 0.3);
+$inner-shadow: inset 0px 4px 4px 0 rgba(0 0 0/ 0.5);
+$img-shadow: 0px -4px 4px rgba(0 0 0 / 0.5);
+$black: #191919;
+$dark-green: #21605d;
+$green: #339476;
+$light-gray: #eaebed;
+
+.lolaKodea{
+    width: 25%;
+    margin-top: 17vh !important;
+}
+
+
+.bocadilloKode {
+    position: absolute;
+    top: 20vh;
+    left: 52vh;
+    height: 200px;
+    width: 300px;
+    background-color: $light-gray;
+    box-shadow: $drop-shadow;
+    border-radius: 2em 2em 2em 0;
+    animation: upDownBocadillo alternate infinite 2.5s linear;
+    
+    h2 {
+        color: $green;
+        font-family: roboto-thin;
+    }
+    
+    p{
+        color: $green;
+        font-size: medium;
+    }
+}
+
+input[type="number"] {
+    top: 10vh;
+    border-radius: 10px !important;
+    border: 0 !important;
+    height: 3em !important;
+    color: $light-gray;
+    margin-top: 2em !important;
+    background-color: $green;
+    -moz-appearance: textfield;
+    outline: none !important;
+    box-shadow: $drop-shadow !important;
+     &::placeholder {
+        color: $light-gray;
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+aside{
+    margin-left: 50vh;
+    background-color: $dark-green;
+    padding: 1%;
+    border-radius: 10px;
+    box-shadow: $drop-shadow;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#kodeBidali{   
+    width: 35%;
+    display: flex;
+    border: 0;
+    border-radius: 10px;
+    justify-content: center !important;
+    align-self: flex-end;
+    margin-top: 2em;
+    color: $dark-green;
+    font-size: large;
+    font-weight: bold;
+    &:focus {
+        outline: 0;
+        border: 0;
+    }
+}
