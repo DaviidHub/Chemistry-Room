@@ -14,7 +14,7 @@ use App\Http\Controllers\ErabiltzaileController;
 |
 */
 
-Route::get('/web', [ErabiltzaileController::class, 'index'])->name('web.login');
+Route::get('/', [ErabiltzaileController::class, 'index'])->name('web.login');
 
 Route::get('/profila', function () {
     return view('web.profila', );
