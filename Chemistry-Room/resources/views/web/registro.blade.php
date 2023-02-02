@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="{{asset("CSS/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("CSS/style.css")}}">
 </head>
@@ -37,7 +37,7 @@
                 <input id="submitRegister" type="submit" class=" border-0 rounded" value="BIDALI">
             </form>
 
-            <a href="{{ route('web.inicio') }}" class="aLogin align-self-center ">LOGIN</a>
+            <a href="{{ route('web.login') }}" class="aLogin align-self-center ">LOGIN</a>
 
         </div>
 

@@ -11,7 +11,17 @@ foreach($datuak as $clave => $valor){
     array_push($izenak,$valor['bideak']);
     array_push($desk,$valor['ezaugarriak']);
 }
-echo json_encode(array($izenak,$desk));
+
+
+$Pista = $miPDO->prepare('SELECT * FROM pistak;');
+$Pista->execute();
+$pistak = [];
+
+foreach($Pista as $clave => $valor){
+    array_push($pistak,$valor['pista']);
+}
+
+echo json_encode(array($izenak,$desk, $pistak));
 
 
 ?>

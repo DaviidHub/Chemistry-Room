@@ -5,12 +5,15 @@
     <div class="dropdown position-absolute top-0 end-0 m-3">
         <div class="circle profile d-flex justify-content-center dropdown-toggle" type="button"
             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="align-self-center px-3">GA</span>
+            <span class="align-self-center px-3"> {{session()->get('erab')->izena[0] . session()->get('erab')->abizenak[0] }}</span>
         </div>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="{{route('web.infoUsu')}}">Profila</a>
-            <a class="dropdown-item" href="#">Admin</a>
-            <a class="dropdown-item" href="{{route('web.logout')}}">Logout</a>
+            <a class="dropdown-item" href="{{route('web.profila')}}">Profila</a>
+            @if(session()->get('erab')->rol=='admin')
+                <a class="dropdown-item" href="{{ route('adminKarpeta.admin') }}">Admin</a>
+            
+            @endif
+            <a class="dropdown-item" href="{{route('web.logout')}}">Itxi Saioa</a>
         </div>
     </div>
 </nav>

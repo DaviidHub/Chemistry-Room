@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(ErabiltzaileSeeder::class);
+        $this->call(ArgazkiakSeeder::class);
         $this->call(PistakSeeder::class);
         $this->call(Froga1Seeder::class);
         $this->call(Froga2Seeder::class);

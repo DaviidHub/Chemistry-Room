@@ -8,13 +8,19 @@ $green:#339476;
 $light-gray: #EAEBED;
 
 @use 'layouts/_orriNagusi';
+@use 'layouts/_profila';
 @use 'layouts/_login';
 @use 'layouts/_registro';
 @use 'layouts/_froga1';
 @use 'layouts/_froga2';
+@use 'layouts/_froga3';
 @use 'layouts/_froga4';
+@use 'layouts/_froga5';
 @use 'layouts/_froga6';
+@use 'layouts/_admin';
 @use 'layouts/_maskotaFroga';
+@use 'layouts/_kodea';
+@use 'layouts/_irabaziOrria';
 @use 'layouts/_transicionBocadillo';
 
 @font-face {
@@ -49,6 +55,11 @@ input[type=password]{
     &::placeholder {
         color: $light-gray;
     }
+}
+
+.error-message {
+    font-size: 80%;
+    color: red;
 }
 
 @keyframes upDownBocadillo {
