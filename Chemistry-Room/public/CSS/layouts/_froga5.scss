@@ -1,0 +1,32 @@
+$black: #191919;
+$dark-green: #21605D;
+$green: #339476;
+$light-gray: #EAEBED;
+
+$drop-shadow: 0 4px 4px 0 rgba(0 0 0 / .3);
+$inner-shadow: inset 0 4px 4px 0 rgba(0 0 0 / .5);
+$img-shadow: 0 -4px 4px rgba(0 0 0 / .5);
+
+#hola{
+    width: 80%;
+}
+
+
+.talde{
+    width: 300px;
+    height: 350px;
+    background-color: $dark-green;
+    color: $light-gray;
+}
+
+.tituloTalde{
+    width: 100%;
+    height: 75px;
+    background-color: #191919;
+}
+
+#hitzRandom{
+    width: 100%;
+    height: 275px;
+    color: $light-gray;
+}

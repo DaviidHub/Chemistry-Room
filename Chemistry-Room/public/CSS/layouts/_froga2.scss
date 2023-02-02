@@ -1,0 +1,84 @@
+/* FROGA2 */
+
+$drop-shadow: 0px 4px 4px 0 rgba(0 0 0/ .3);
+$inner-shadow: inset 0px 4px 4px 0 rgba(0 0 0/ .5);
+$img-shadow: 0px -4px 4px  rgba(0 0 0 / .5);
+$black: #191919;
+$dark-green:#21605D;
+$green:#339476;
+$light-gray: #EAEBED;
+
+:root{
+  /* CARTAS A LO ANCHO */
+  --w: calc(50vw / 3);
+  /* CARTAS A LO ALTO */
+  --H: calc(50vw / 4 );
+}
+
+#cuerpo{
+  /* padding: 0;
+    margin: 0; */
+    -webkit-perspective: 1000;
+    background-color: #339476;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.area-tarjeta, .tarjeta, .cara{
+  cursor: pointer;
+  width: var(--w);
+  min-width: 120px;
+  min-height: 120px;
+  height: var(--h);
+  border-radius: 20px;
+}
+
+.tarjeta{
+  position: relative;
+  transform-style: preserve-3d;
+  /* LLAMADA AL KEYFRAME */
+  animation: iniciar 2s;
+}
+
+.cara{
+  position: absolute;
+  backface-visibility: hidden;
+  box-shadow: inset 0 0 0 2px white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trasera{
+  background-color: $dark-green;
+  transform: rotateY(180deg);
+}
+
+.superior{
+  background-color: #21605D;
+}
+
+.nuevojuego{
+  cursor: pointer;
+  background:linear-gradient(orange,  darkorange);
+  padding: 20px;
+  border-radius: 50px;
+  border: white solid 5px;   
+}
+
+@keyframes iniciar{
+  20%,90%{
+      transform: rotateY(180deg);
+  }
+  0%,100%{
+      transform: rotateY(0deg);
+  }
+}
+
+.imagenes{
+  width: 100px !important;
+}

@@ -1,0 +1,65 @@
+$black: #191919;
+$dark-green: #21605D;
+$green: #339476;
+$medium-green: #194846;
+$light-gray: #EAEBED;
+
+$drop-shadow: 0 4px 4px 0 rgba(0 0 0 / .3);
+$inner-shadow: inset 0 4px 4px 0 rgba(0 0 0 / .5);
+$img-shadow: 0 -4px 4px rgba(0 0 0 / .5);
+
+.espacio {
+    color: $light-gray;
+    
+    .Cientificos {
+        font-family: roboto-regular;
+        font-weight: lighter;
+
+    }
+}
+
+table{
+    border-collapse:separate; 
+    border-spacing: 4em 3em;
+    width: 90%;
+}   
+
+h3 {
+    font-family: roboto-thin;
+    font-size: 1.35em;
+    font-weight: bold;
+    width: 20vh;
+}
+
+#emaitzaFinal{
+    font-family: roboto-thin;
+    font-size: 2em;
+    font-weight: bold; 
+    background-color: $dark-green;
+    height: 2em;
+    width: 10em;
+}
+
+
+
+.nombreQuimico {
+    border-bottom: 1px solid $black !important;
+    background: transparent !important;
+    border: none;
+    box-shadow: none;
+    width: 300px;
+    border: 0;
+}
+
+.creador {
+    top: 25%;
+}
+
+#arriba {
+    background-color: $medium-green;
+    width: 20em;
+    height: 5em;
+    font-family: roboto-light;
+}
+
+
