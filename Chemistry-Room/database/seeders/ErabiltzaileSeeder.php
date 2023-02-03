@@ -21,7 +21,7 @@ class ErabiltzaileSeeder extends Seeder
         $erabiltzaile->abizenak = 'Tortugas';
         $erabiltzaile->mail = 'lolatortuga@gmail.com';
         $erabiltzaile->pasahitza = 'Inf041';
-        $erabiltzaile->rol = 'Admin';
+        $erabiltzaile->rol = 'admin';
         $erabiltzaile->save();
     }
 }
