@@ -101,7 +101,7 @@ class ErabiltzaileController extends Controller
     
     
             $erab ->pasahitza = $request->pasahitza;
-            $erab ->rol = 'ikasle';
+            $erab ->rol = 'jokalaria';
             $erab->save();
         }
         return redirect()->action([ErabiltzaileController::class, 'index']);
