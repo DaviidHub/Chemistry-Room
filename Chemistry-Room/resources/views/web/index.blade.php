@@ -2,16 +2,34 @@
 <html lang="en">
 
 <head>
-    <title>Colegio</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{asset("CSS/bootstrap.min.css")}}">
+    <link rel="stylesheet" href="{{asset("CSS/style.scss")}}">
+
 </head>
 
 
 <body>
- 
-    <picture>
-        <img src="/multimedia/quimica.png" alt="">
-    </picture>
+
+    <div class="kontenedorea">
+        <picture>
+            <img class="w-25" src="{{asset("multimedia/quimica.png")}}" alt="">
+        </picture>
+
+        <div>
+            <form action="">
+
+                <input type="text" placeholder="Mail">
+                <input type="text" placeholder="Pasahitza">
+
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+
 
 </body>
 

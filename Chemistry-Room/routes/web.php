@@ -14,9 +14,15 @@ use App\Http\Controllers\ErabiltzaileController;
 |
 */
 
-Route::get('/web', function () {
-return view('web.login', );
-})->name('web.inicio');
+Route::get('/', [ErabiltzaileController::class, 'index'])->name('web.login');
+
+Route::get('/profila', function () {
+    return view('web.profila', );
+    })->name('web.profila');
+
+Route::get('/kodea', function () {
+    return view('web.kodeSartu');
+})->name('web.kodeSartu');
 
 Route::get('/registro', function () {
     return view('web.registro');
@@ -50,15 +56,20 @@ Route::get('/froga6', function () {
     return view('web.froga6');
 })->name('web.froga6');
 
-Route::get('/profila', function () {
-    return view('web.profila', );
-    })->name('web.profila');
+Route::get('/irabaziOrria', function () {
+    return view('web.irabaziOrria');
+})->name('web.irabaziOrria');
 
-Route::get('/adminKarpeta', [ErabiltzaileController::class, 'adminmode'])->name('adminKarpeta.admin');
+// Erabiltzaile Guztiak
 Route::get('/crear', [ErabiltzaileController::class, 'store'])->name('web.store');
-Route::post('/orriNagusi', [ErabiltzaileController::class, 'login'])->name('web.login');
+Route::post('/login', [ErabiltzaileController::class, 'login'])->name('web.logeo');
 Route::get('/logout', [ErabiltzaileController::class, 'logout'])->name('web.logout');
+Route::put('/update/{id}', [ErabiltzaileController::class, 'update'])->name('web.update');
+
+// Admin
+Route::get('/adminKarpeta', [ErabiltzaileController::class, 'adminmode'])->name('adminKarpeta.admin');
 Route::delete('/Erabiltzaileak/{id}', [ErabiltzaileController::class, 'destroy'])->name('Erabiltzaileak.destroy');
+Route::post('/argazkiUpload',  [ErabiltzaileController::class, 'argazki'])->name('web.storeFotos');
 
 // Middleware
 Route::group(['Middleware' => 'middlewareSesion'], function(){

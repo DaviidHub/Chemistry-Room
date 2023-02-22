@@ -16,7 +16,7 @@ return new class extends Migration
         //
         Schema::create('Pistak', function (Blueprint $table) {
             $table->id();
-            $table->string('pista', 90)->nullable();
+            $table->string('pista', 400)->nullable();
             $table->timestamps();
         });
     }

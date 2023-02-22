@@ -1,9 +1,7 @@
 <?php
 
-// ======[KONEXIOA]======
 include 'konexioa.php';
 
-// ======[DATUAK]======
 $datuak = $miPDO->prepare('SELECT * FROM froga1;');
 $datuak->execute();
 $izenak = [];
@@ -14,16 +12,16 @@ foreach($datuak as $clave => $valor){
     array_push($desk,$valor['ezaugarriak']);
 }
 
-// ======[PISTAK]======
-$pistak = $miPDO->prepare('SELECT pista FROM pistak WHERE id=1;');
-$pistak->execute();
-$pista = [];
 
-foreach($pistak as $clave => $valor){
-    array_push($pista, $valor['pista']);
+$Pista = $miPDO->prepare('SELECT * FROM pistak;');
+$Pista->execute();
+$pistak = [];
+
+foreach($Pista as $clave => $valor){
+    array_push($pistak,$valor['pista']);
 }
 
-echo json_encode(array($izenak,$desk,$pista));
+echo json_encode(array($izenak,$desk, $pistak));
 
 
 ?>

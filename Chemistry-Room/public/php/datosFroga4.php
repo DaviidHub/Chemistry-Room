@@ -2,16 +2,26 @@
 
 include 'konexioa.php';
 
-$datuak = $miPDO->prepare('SELECT * FROM froga4;');
-$datuak->execute();
-$galdera = [];
-$erantzuna = [];
+$datuakAcido = $miPDO->prepare('SELECT * FROM froga4 WHERE medio= "acido";');
+$datuakAcido->execute();
+$galderaAcido = [];
+$erantzunaAcido = [];
 
-foreach($datuak as $clave => $valor){
-    array_push($galdera,$valor['galdera']);
-    array_push($erantzuna,$valor['erantzuna']);
+foreach($datuakAcido as $clave => $valor){
+    array_push($galderaAcido,$valor['galdera']);
+    array_push($erantzunaAcido,$valor['erantzuna']);
 }
-echo json_encode(array($galdera,$erantzuna));
 
+$datuakBase = $miPDO->prepare('SELECT * FROM froga4 WHERE medio= "basico";');
+$datuakBase->execute();
+$galderaBase = [];
+$erantzunaBase = [];
+
+foreach($datuakBase as $clave => $valor){
+    array_push($galderaBase,$valor['galdera']);
+    array_push($erantzunaBase,$valor['erantzuna']);
+}
+
+echo json_encode(array($galderaAcido,$erantzunaAcido,$galderaBase,$erantzunaBase));
 
 ?>

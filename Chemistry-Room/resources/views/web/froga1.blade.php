@@ -14,7 +14,7 @@
 
 <body class="overflow-hidden">
 
-    @include('web\layouts\_menuJuegos')
+    @include('web.layouts._menuJuegos') 
 
     <main class="container">
         {{-- VUE datuak  --}}

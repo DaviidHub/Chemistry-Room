@@ -19,18 +19,25 @@
     <div class="kontenedorea d-flex justify-content-center">
 
         <div class="bocadillo d-flex justify-content-center">
-            <h2 class="loginText align-self-center">LOGIN</h2>
+            <h2 class="loginText align-self-center">LOGIN</h2> 
         </div>
 
-        <img class="maskota" src="{{asset('multimedia/quimica.png')}}" alt="">
+        <img class="maskota img-fluid" src="multimedia/{{ $lola->argazkia }}" alt="LOLA FOTO">
 
         <div class="divLogin formLogin d-flex flex-column justify-content-between mx-5">
 
-            <form id="formLogin" action="{{route('web.login') }}" method="post"
+            <form id="formLogin" action="{{route('web.logeo') }}" method="post"
                 class="formLogin d-flex flex-column align-items-center mx-5" autocomplete="off">
                 @csrf
                 <input id="inputMail" class="inputLogin" type="text" placeholder="Mail" name="mail">
+                @error('mail')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
+
                 <input class="inputLogin" type="password" placeholder="Pasahitza" name="pasahitza">
+                @error('pasahitza')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
 
                 <input id="submitLogin" type="submit" class=" border-0 rounded" value="BIDALI">
             </form>
@@ -45,9 +52,6 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{-- Vue 3 --}}
     <script src="https://unpkg.com/vue@next"></script>
-    {{-- JS login --}}
-    <script src="{{asset('JS/login.js')}}"></script>
-
 </body>
 
 </html>

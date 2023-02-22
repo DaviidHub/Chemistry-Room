@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>Admin</title>
-    @include('../web/layouts/_includes')
+    <head>
+        <title>Admin</title>
+@include('../web/layouts/_includes')
 </head>
 
 
@@ -14,54 +14,38 @@
     <main class="container">
         <table id="tabla-admin" class="my-5">
             <tr class="titulos">
-                <th>Izena</th>
-                <th>Abizena</th>
-                <th>Mail</th>
-                <th>Rol</th>
+                <th class="th-admin">Izena</th>
+                <th class="th-admin">Abizena</th>
+                <th class="th-admin">Mail</th>
+                <th class="th-admin">Rol</th>
             </tr>
-            @foreach ($erab as $usuario)
-                <tr class="datos">
-                        <td>{{ $usuario->izena }}</td>
-                        <td>{{ $usuario->abizenak }}</td>
-                        <td>{{ $usuario->mail }}</td>
-                        <td>{{ $usuario->rol }}</td>
-
-                        <!-- ERABILTZAILEA EZABATU BOTOIA -->
-                        <td class="border-0 sin">
-                            <input @submit.prevent type="submit" value="X" class="ekis" data-toggle="modal" data-target="#confirmModal{{$usuario->id}}">
-                        </td>
-                </tr>
+            @foreach($erab as $usuario)
+            <tr class="datos">
+                <form  action="{{ route('Erabiltzaileak.destroy', $usuario->id) }}" method="post" >
+                    @method('DELETE')
+                    @csrf
+                    <td class="td-admin">{{ $usuario->izena }}</td>
+                    <td class="td-admin">{{ $usuario->abizenak }}</td>
+                    <td class="td-admin">{{ $usuario->mail }}</td>
+                    <td class="td-admin">{{ $usuario->rol }}</td>
+                    
+                    <!-- ERABILTZAILEA EZABATU BOTOIA -->
+                    <td class="border-0 sin td-admin"><input type="submit" value="X" class="ekis"></td>
+                </form>
+            </tr>
             @endforeach
         </table>
 
-        <!-- Modal -->
-        @foreach ($erab as $usuario)
-        <div class="modal fade" id="confirmModal{{$usuario->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title  text-dark" id="exampleModalLabel">EZABATU</h5>
-                        <button type="button" class="close btn btn-outline-danger" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body text-dark">
-                        {{-- CONTENIDO MODAL  --}}
-                        <b>{{$usuario->izena}}</b> erabiltzailea ezabatu nahi duzu?
-                    </div>
-                    <div class="modal-footer">
-                        <form action="{{ route('Erabiltzaileak.destroy', $usuario->id) }}" method="post">
-                            @method('DELETE')
-                            @csrf  
-                            <input id="button-confirm" type="submit" class="btn btn-primary" value="Bai, ezabatu">
-                        </form>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal"> Ez </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endforeach
+        <form action="{{ route('web.storeFotos') }}" method="POST" enctype="multipart/form-data" 
+        class="formLogi d-flex align-items-center" autocomplete="off">
+        @csrf    
+            
+            <input type="text" class="argazkiForm mx-5" name="izena" placeholder="Argazki izena" value="{{ old('izena') }}">
+        
+            <input id="inputArgazki" type="file" name="argazki" class="argazkiForm" placeholder="argazki" value="{{ old('argazki') }}">
+    
+            <input id="argazkiBotoi" type="submit" value="BIDALI">
+        </form>
 
     </main>
 </body>

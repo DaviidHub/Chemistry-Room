@@ -14,12 +14,15 @@
 
 <body>
 
-    @include('web\layouts\_menuJuegos')
+    @include('web.layouts._menuJuegos') 
 
     <main id="froga5" class="container mx-5 my-3"></main>
 
     {{-- VUE pista  --}}
     <section id="maskota"></section>
+
+    {{-- Swal --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 
