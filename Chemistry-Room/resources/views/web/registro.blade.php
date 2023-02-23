@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <link rel="icon" type="image/png" href="{{ asset('Multimedia/life.png') }}">
     <link rel="stylesheet" href="{{asset("CSS/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("CSS/style.css")}}">
 </head>
@@ -50,7 +51,7 @@
     {{-- Vue 3 --}}
     <script src="https://unpkg.com/vue@next"></script>
     {{-- JS register --}}
-    <script src="{{asset('JS/register.js')}}"></script>
+    <script src="{{asset('js/register.js')}}"></script>
 
 
 </body>

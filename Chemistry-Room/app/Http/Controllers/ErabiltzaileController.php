@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Erabiltzaileak;
 use App\Models\Argazkiak;
+use Illuminate\Support\Facades\Hash;
+
 
 class ErabiltzaileController extends Controller
 {
@@ -30,14 +32,16 @@ class ErabiltzaileController extends Controller
 
         $usuarios = Erabiltzaileak::where('mail','=',$request->mail)->get();
         foreach($usuarios as $usu){
-            if($request->pasahitza == $usu->pasahitza){
+            if(Hash::check($request->pasahitza, $usu->pasahitza)){
                 session(['erab' => $usu]);
+                session(['sFoto' => $usu->argazkia]);
+                session(['idioma' => "es"]);
                 return view('web.orriNagusi');
             }   
         }
 
         $error = '';
-        return view('web.login', compact('error'));
+        return redirect()->action([ErabiltzaileController::class, 'index']);
 
     }
 
@@ -48,6 +52,8 @@ class ErabiltzaileController extends Controller
         $request->session()->invalidate();
         //La carga de nuevo y regenera token
         $request->session()->regenerateToken();
+        // Borrar sesion 
+        $request->session()->flush();
 
         return redirect()->action([ErabiltzaileController::class, 'index']);
     }
@@ -95,40 +101,16 @@ class ErabiltzaileController extends Controller
             
             //
             $erab = new Erabiltzaileak();
+
             $erab ->izena = $request->izena;
             $erab ->abizenak = $request->abizena;
             $erab ->mail = $request->mail;
-    
-    
-            $erab ->pasahitza = $request->pasahitza;
+            $erab -> argazkia = 'multimedia/perfilArgazkiak/predeterminada.webp';
+            $erab ->pasahitza = bcrypt($request->pasahitza);
             $erab ->rol = 'jokalaria';
             $erab->save();
         }
         return redirect()->action([ErabiltzaileController::class, 'index']);
-    }
-
-    public function argazki(Request $request)
-    {
-        //
-        
-
-        $argazkiDatu = new Argazkiak();
-
-        if($request->hasFile('argazki') ){
-            $archivo = $request->file('argazki');
-            $ruta = 'multimedia/';
-            $nombreArchivo = time() . '-' . $archivo->getClientOriginalName();
-            $subida = $request->file('argazki')->move($ruta, $nombreArchivo);
-            $argazkiDatu->argazkia = $nombreArchivo;
-        }
-
-
-        $argazkiDatu->Izena = $request->izena;
-        $argazkiDatu->save();
-
-        $erab = Erabiltzaileak::orderby('id', 'desc')->paginate(16);
-
-        return view('adminKarpeta.admin', compact("erab"));
     }
 
     /**
@@ -137,9 +119,16 @@ class ErabiltzaileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function idioma()
     {
-        //
+            if(session()->get('idioma') == "es"){
+                 session(['idioma' => "eu"]);
+            }
+            else{
+                 session(['idioma' => "es"]);
+            }
+            return redirect()->route('web.profila');
+        
     }
 
     /**
@@ -150,8 +139,40 @@ class ErabiltzaileController extends Controller
      */
     public function edit($id)
     {
-        //
-        
+        $erab = Erabiltzaileak::findOrFail($id);
+        return view('web.edit', ['erab' => $erab]);
+    }
+
+    public function adminUpdate(Request $request, $id) 
+    {
+        $erab = Erabiltzaileak::findOrFail($id);
+        $erab ->izena = $request->izena;
+        $erab ->abizenak = $request->abizenak;
+        $erab ->mail = $request->mail;
+        $erab ->rol = $request->rol;
+        if ($request->pasahitza != '') {
+            $erab ->pasahitza = bcrypt($request->pasahitza);
+        }
+
+        if($request->hasFile('argazkia') ) {
+            if (file_exists($erab->argazkia) || $erab->argazika != 'multimedia/perfilArgazkiak/predeterminada.webp') {
+                unlink($erab->argazkia);
+            }
+            $archivo = $request->file('argazkia');
+            $ruta = 'multimedia/perfilArgazkiak/';
+            $nombreArchivo = session()->get('erab')->mail. '-' . $archivo->getClientOriginalName();
+            $subida = $request->file('argazkia')->move($ruta, $nombreArchivo);
+            $erab->argazkia = $ruta.$nombreArchivo;
+            $erab->save();
+        } elseif (!($request->hasFile('argazkia'))) {
+            $img = $erab->argazkia;
+            $erab->argazkia = $img;
+            $erab->save();
+        } else
+        $erab->save();
+
+
+        return redirect()->route('adminKarpeta.admin');
     }
 
     /**
@@ -164,30 +185,65 @@ class ErabiltzaileController extends Controller
     public function update(Request $request, $id)
     {
 
+        $erab = Erabiltzaileak::findOrFail($id);
+
         if($request->pasahitza != ''){
             if($request->pasahitza == $request->pasahitzab){
-                $erab = Erabiltzaileak::findOrFail($id);
+
+                if($request->hasFile('argazkia') ){
+
+                    if (file_exists($erab->argazkia) || $erab->argazika != 'multimedia/perfilArgazkiak/predeterminada.webp') {
+                        unlink($erab->argazkia);
+                    }
+
+                    $archivo = $request->file('argazkia');
+                    
+                    $nombreArchivo = session()->get('erab')->mail . '-' . $archivo->getClientOriginalName();
+                    $subida = $request->file('argazkia')->move($ruta, $nombreArchivo);
+                    $erab->argazkia = $ruta.$nombreArchivo;
+                }
                         $erab ->izena = $request->izena;
                         $erab ->abizenak = $request->abizenak;
                         $erab ->mail = $request->mail;
-                        $erab ->pasahitza = $request->pasahitza;
+                        $erab ->pasahitza = bcrypt($request->pasahitza);
                         $erab->save();
-    
-                        session(['erab' => $erab]);
 
-                        return view('web.profila');
-            }
+                        $request->session()->flush();
+            
+                        session(['erab' => $erab]);
+                        session(['sFoto' => $erab->argazkia]);
+
+                        return redirect()->route('web.profila');
+                    }
+
         }else{
-            $erab = Erabiltzaileak::findOrFail($id);
+
+            if($request->hasFile('argazkia') ){
+
+                if (file_exists($erab->argazkia) || $erab->argazika != 'multimedia/perfilArgazkiak/predeterminada.webp') {
+                    unlink($erab->argazkia);
+                }
+                
+                $archivo = $request->file('argazkia');
+                $ruta = 'multimedia/perfilArgazkiak/';
+                $nombreArchivo = session()->get('erab')->mail . '-' . $archivo->getClientOriginalName();
+                $subida = $request->file('argazkia')->move($ruta, $nombreArchivo);
+                $erab->argazkia = $ruta . $nombreArchivo;
+            }
+
             $erab ->izena = $request->izena;
             $erab ->abizenak = $request->abizenak;
             $erab ->mail = $request->mail;
             $erab->save();
 
+            $request->session()->flush();
+            
             session(['erab' => $erab]);
+            session(['sFoto' => $erab->argazkia]);
 
-            return view('web.profila');
+            return redirect()->route('web.profila');
         }
+
     }
 
     /**
@@ -202,4 +258,5 @@ class ErabiltzaileController extends Controller
         $user->delete();
         return redirect()->route('adminKarpeta.admin')->with('success', 'Erabiltzailea ezabatuta');
     }
+
 }

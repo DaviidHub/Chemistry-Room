@@ -1,4 +1,4 @@
-let inputMail, mailBool;
+let inputMail;
 
 const vm = {
     mounted() {
@@ -6,36 +6,58 @@ const vm = {
     },
     data() {
         return {
-            personas: []
-        }
+            personas: [],
+            mailBool: true,
+        };
     },
     methods: {
         cargarPersonas() {
-            document.querySelector('#submitRegister').addEventListener("click", (e) => {
-                let inputMail = document.querySelector('#inputMail').value;
-                e.preventDefault();
-                fetch("../public/PHP/mail.php", {
-                        method: "POST",
-                        body: '#formRegister'
-                    }).then(response => response.json())
-                    .then(data => {
-                        data.forEach(databaseMail => {
-                            if (databaseMail == inputMail) {
-                                mailBool = true
-                                Swal.fire({
-                                    icon: 'error',
-                                    title: 'Oops...',
-                                    text: 'Maila erregistratuta dago',
-                                    footer: '<a href="./web">Login</a>'
-                                })
-                            }
-                        })
-                    });
-                if (mailBool) {
-                    document.querySelector('#formRegister').submit();
-                }
+            const url = "../public/php/mail.php";
+            const promesa = fetch(url);
+
+            promesa.then((respuesta) => {
+                respuesta.json().then((datos) => {
+                    this.personas = datos;
+                });
             });
-        }
-    }
+
+            document
+                .querySelector("#submitRegister")
+                .addEventListener("click", this.compararMail);
+        },
+        compararMail(e) {
+            inputMail = document.querySelector("#inputMail").value;
+            e.preventDefault();
+
+            this.personas.forEach((databaseMail) => {
+                if (databaseMail === inputMail) this.mailBool = false;
+            });
+            if (!this.mailBool) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Maila registratuta dago",
+                    footer: '<a class="footerSwal" href="./">Login</a>',
+                    background: '#21605D',
+                    color: 'white',
+                    confirmButtonColor: "#339476",
+                }).then((this.mailBool = true));
+            } else {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Te has registrado',
+                    showConfirmButton: false,
+                    timer: 1500,
+                    background: '#21605D',
+                    color: 'white',
+                    confirmButtonColor: "#339476",
+                  }).then(valor => 
+                    document.querySelector("#formRegister").submit()
+                  );
+            }
+
+        },
+    },
 };
-Vue.createApp(vm).mount('#formRegister')
+Vue.createApp(vm).mount("#formRegister");

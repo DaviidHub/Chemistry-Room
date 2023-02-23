@@ -99,6 +99,7 @@ export default {
                         arrayErantzuna.push(data[jsonRespuesta][zenbaki[i]]);
                     }
                 });
+                console.log("🚀 ~ file: froga6.vue:100 ~ .then ~ arrayErantzuna", this.respuestas)
         },
         /**
          *

@@ -20,7 +20,7 @@ class ErabiltzaileSeeder extends Seeder
         $erabiltzaile->izena = 'Lola';
         $erabiltzaile->abizenak = 'Tortugas';
         $erabiltzaile->mail = 'lolatortuga@gmail.com';
-        $erabiltzaile->pasahitza = 'Inf041';
+        $erabiltzaile->pasahitza = bcrypt('Inf041');
         $erabiltzaile->rol = 'admin';
         $erabiltzaile->save();
     }
