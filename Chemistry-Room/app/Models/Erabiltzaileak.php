@@ -14,6 +14,6 @@ class Erabiltzaileak extends Model
 
    protected $primaryKey = "id";
 
-   protected $fillable = ['izena', 'abizenak', 'mail', 'pasahitza', 'rol'];
+   protected $fillable = ['argazkia', 'izena', 'abizenak', 'mail', 'pasahitza', 'rol'];
 
 }

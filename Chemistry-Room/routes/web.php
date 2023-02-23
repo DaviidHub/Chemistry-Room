@@ -13,6 +13,7 @@ use App\Http\Controllers\ErabiltzaileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => 'idiomas'], function(){
 
 Route::get('/', [ErabiltzaileController::class, 'index'])->name('web.login');
 
@@ -62,14 +63,16 @@ Route::get('/irabaziOrria', function () {
 
 // Erabiltzaile Guztiak
 Route::get('/crear', [ErabiltzaileController::class, 'store'])->name('web.store');
-Route::post('/login', [ErabiltzaileController::class, 'login'])->name('web.logeo');
+Route::post('/orriNagusi', [ErabiltzaileController::class, 'login'])->name('web.logeo');
 Route::get('/logout', [ErabiltzaileController::class, 'logout'])->name('web.logout');
 Route::put('/update/{id}', [ErabiltzaileController::class, 'update'])->name('web.update');
+Route::get('/idioma', [ErabiltzaileController::class, 'idioma'])->name('web.idioma');
 
 // Admin
 Route::get('/adminKarpeta', [ErabiltzaileController::class, 'adminmode'])->name('adminKarpeta.admin');
 Route::delete('/Erabiltzaileak/{id}', [ErabiltzaileController::class, 'destroy'])->name('Erabiltzaileak.destroy');
-Route::post('/argazkiUpload',  [ErabiltzaileController::class, 'argazki'])->name('web.storeFotos');
+Route::get('/edit/{id}', [ErabiltzaileController::class, 'edit'])->name('web.edit');
+Route::post('/adminUpdate/{id}', [ErabiltzaileController::class, 'adminUpdate'])->name('admin.Update');
 
 // Middleware
 Route::group(['Middleware' => 'middlewareSesion'], function(){
@@ -77,3 +80,7 @@ Route::group(['Middleware' => 'middlewareSesion'], function(){
         return view('web.infoErab');
     })->name('web.infoUsu');
 });
+
+});
+
+

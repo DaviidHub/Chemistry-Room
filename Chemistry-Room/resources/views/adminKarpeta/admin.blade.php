@@ -14,10 +14,11 @@
     <main class="container">
         <table id="tabla-admin" class="my-5">
             <tr class="titulos">
-                <th class="th-admin">Izena</th>
-                <th class="th-admin">Abizena</th>
-                <th class="th-admin">Mail</th>
-                <th class="th-admin">Rol</th>
+                <th class="th-admin"> {{__("admin.nombre")}} </th>
+                <th class="th-admin"> {{__("admin.apellido")}} </th>
+                <th class="th-admin"> {{__("admin.correo")}} </th>
+                <th class="th-admin"> {{__("admin.rol")}} </th>
+                <th class="td-admin">Kudeatu</th>
             </tr>
             @foreach($erab as $usuario)
             <tr class="datos">
@@ -28,24 +29,16 @@
                     <td class="td-admin">{{ $usuario->abizenak }}</td>
                     <td class="td-admin">{{ $usuario->mail }}</td>
                     <td class="td-admin">{{ $usuario->rol }}</td>
+                    <td class="td-admin"><a class="btn btn-outline-light my-2" href="{{ route('web.edit', $usuario->id) }}">Editatu</a></td>
                     
                     <!-- ERABILTZAILEA EZABATU BOTOIA -->
-                    <td class="border-0 sin td-admin"><input type="submit" value="X" class="ekis"></td>
+                    <td class="border-0 sin td-admin"><input type="submit" value="X" id="ekis"></td>
                 </form>
             </tr>
             @endforeach
         </table>
 
-        <form action="{{ route('web.storeFotos') }}" method="POST" enctype="multipart/form-data" 
-        class="formLogi d-flex align-items-center" autocomplete="off">
-        @csrf    
-            
-            <input type="text" class="argazkiForm mx-5" name="izena" placeholder="Argazki izena" value="{{ old('izena') }}">
-        
-            <input id="inputArgazki" type="file" name="argazki" class="argazkiForm" placeholder="argazki" value="{{ old('argazki') }}">
-    
-            <input id="argazkiBotoi" type="submit" value="BIDALI">
-        </form>
+  
 
     </main>
 </body>

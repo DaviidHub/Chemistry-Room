@@ -1,4 +1,4 @@
-    let inputMail;
+let inputMail;
 
 const vm = {
     mounted() {
@@ -7,44 +7,45 @@ const vm = {
     data() {
         return {
             personas: [],
-            mailBool: true
-        }
+            mailBool: true,
+        };
     },
     methods: {
         cargarPersonas() {
-            document.querySelector('#submitLogin').addEventListener("click", (e) => {
-                let inputMail = document.querySelector('#inputMail').value;
-                e.preventDefault();
-                fetch("../public/PHP/mail.php", {
-                        method: "POST",
-                        body: '#formLogin'
-                    }).then(response => response.json())
-                    .then(data => {
-                        
-                        data.forEach(databaseMail => {
-                            console.log("mailBool FOREACH: ", this.mailBool);
-                            console.log("🚀 ~ file: login.js:27 ~ document.querySelector ~ databaseMail", databaseMail)
-                            console.log("🚀 ~ file: login.js:28 ~ document.querySelector ~ inputMail", inputMail)
-                            if ( databaseMail == inputMail) {
-                                this.mailBool = false
-                                console.log("mailBool IF: ", this.mailBool);
-                            }
-                        })
+            const url = "../public/php/mail.php";
+            const promesa = fetch(url);
 
-                        if (this.mailBool) {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'Maila ez dago erregistratuta',
-                                footer: '<a href="./registro">Erregistratu</a>'
-                            })
-                            this.mailBool = false;
-                        } else{
-                            document.querySelector('#formLogin').submit();
-                        }
-                    });
+            promesa.then((respuesta) => {
+                respuesta.json().then((datos) => {
+                    this.personas = datos;
+                });
             });
-        }
-    }
+
+            document
+                .querySelector("#submitLogin")
+                .addEventListener("click", this.compararMail);
+        },
+        compararMail(e) {
+            inputMail = document.querySelector("#inputMail").value;
+            e.preventDefault();
+
+            this.personas.forEach((databaseMail) => {
+                if (databaseMail === inputMail) this.mailBool = false;
+            });
+            if (this.mailBool) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Maila ez dago erregistratuta",
+                    footer: '<a class="footerSwal" href="./registro">Erregistratu</a>',
+                    background: '#21605D',
+                    color: 'white',
+                    confirmButtonColor: "#339476",
+                }).then((this.mailBool = true));
+            } else {
+                document.querySelector("#formLogin").submit();
+            }
+        },
+    },
 };
-Vue.createApp(vm).mount('#formLogin')
+Vue.createApp(vm).mount("#formLogin");

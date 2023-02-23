@@ -16,10 +16,11 @@ return new class extends Migration
         //
         Schema::create('Erabiltzaileak', function (Blueprint $table) {
             $table->id();
+            $table->string('argazkia', 375)->nullable();
             $table->string('izena', 75)->nullable();
             $table->string('abizenak', 75)->nullable();
             $table->string('mail', 35)->nullable();
-            $table->string('pasahitza', 35)->nullable();
+            $table->string('pasahitza', 250)->nullable();
             $table->string('rol', 35)->nullable();
             $table->timestamps();
         });

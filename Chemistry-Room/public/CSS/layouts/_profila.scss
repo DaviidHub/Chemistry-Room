@@ -12,6 +12,16 @@ $img-shadow: 0 -4px 4px rgba(0 0 0 / .5);
     margin-left: 10%;
 }
 
+body{
+    overflow-y: hidden;
+}
+
+#profilArgazki{
+    margin-top:20px;
+    width: 10%;
+    border-radius: 20px;
+}
+
 .input,#bidali{
     width: 20%;
     background-color: $dark-green !important;
@@ -23,7 +33,7 @@ $img-shadow: 0 -4px 4px rgba(0 0 0 / .5);
     &#bidali{
         width: 15%;
         margin-left: 40%;
-        margin-top: 10%;
+        margin-top: 5%;
         display: flex;
         justify-content: center;
     }

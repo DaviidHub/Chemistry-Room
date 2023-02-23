@@ -28,16 +28,23 @@ $img-shadow: 0 -4px 4px rgba(0 0 0 / .5);
         font-weight: bolder;
     }
 
+
 }
 
-.circle {
+.circles{
     background-color: $green;
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    -webkit-box-shadow: $drop-shadow;
-    -moz-box-shadow: $drop-shadow;
-    box-shadow: $drop-shadow;
+
+}
+
+.circle {
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
 }
 
 .atom {
@@ -68,10 +75,6 @@ $img-shadow: 0 -4px 4px rgba(0 0 0 / .5);
     span {
         color: $light-gray;
         font-size: .5em;
-    }
-
-    &:active {
-        box-shadow: $inner-shadow;
     }
 }
 
